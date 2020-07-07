@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <header>
+        <h1>Forms</h1>
+    </header>
+    <section>
+        <form action="#" method="POST">
+            <p>
+                <label>
+                    Name:
+                    <input type="text" value="Andrea 0" name="name" maxlength="4" disabled/>
+                </label>
+            </p>
+            <p>
+                <label>
+                    Email:
+                    <input type="email" placeholder="andrea.pachas1@gmail.com" name="email"/>
+                </label>
+            </p>
+            <p>
+                <label for="age">Age:</label>
+                <input type="age" type="number" name="age"/>
+            </p>
+            <p>
+                <label>
+                    Comments:
+                    <textarea maxlength="120" name="comments" rows="3"></textarea>
+                </label>
+            </p>
+            <fieldset>
+                <legend>Gender:</legend>
+                    <label>
+                        <input type="radio" name="gender" value="male"/>
+                        Male
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="female"/>
+                        Female
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="other"/>
+                        Other
+                    </label>
+            </fieldset>
+            <select name="country">
+                <option value="1>">Argentina</option>
+                <option value="2>">Bolivia</option>
+                <option value="3>">Chile</option>
+                <option value="4>">Perú</option>
+            </select>
+            <div>
+                <label for="url">Página Web:</label>
+                <input type="tel" id="url" name="url">
+            </div>
+            <div>
+                <label for="cv">Cargue su CV:</label>
+                <input type="file" name="cv" id="cv">
+            </div>
+            <div>
+                <label for="pass">Password:</label>
+                <input type="password" name="pass" id="pass">
+            </div>
+            <input type="submit" value="Send request"/>
+            <input type="reset" value="Clean form"/>
+        </form>
+    </section>
+</body>
+</html>
