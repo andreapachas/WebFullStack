@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Inscribete ya!</title>
+
+</head>
+<body>
+    <header>
+       <h1>Inscribete al curso de Web Full Stack</h1>
+    </header>
+    <section>
+        <form action="#" method="POST">
+            <p>
+                <label>
+                    Nombre:
+                    <input type="text" placeholder="Ingresa tu nombre" name="name" maxlength="20" required/>
+                </label>
+            </p>
+            <p>
+                <label>
+                    Apellido:
+                    <input type="text" placeholder="Ingresa tu apellido" name="surname" maxlength="20" required/>
+                </label>
+            </p>
+            <p>
+                <label>
+                    Email:
+                    <input type="email" placeholder="Ingresa tu correo" name="email" maxlength="25" required/>
+                </label>
+            </p>
+            <label for="country">País de Procedencia:</label>
+            <select name="country" required> 
+                <option value="1">Argentina</option>
+                <option value="2">Bolivia</option>
+                <option value="3">Chile</option>
+                <option value="4">Perú</option>
+            </select>
+            <fieldset>
+                <legend>¿A qué carrera deseas inscribirte?</legend>
+                    <label>
+                        <input type="checkbox" name="course" value="ux" checked/>
+                        UX/UI
+                    </label>
+                    <label>
+                        <input type="checkbox" name="course" value="ds"/>
+                        Data Science
+                    </label>
+                    <label>
+                        <input type="checkbox" name="course" value="dwfs"/>
+                        Desarrollo Web Full Stack
+                    </label>
+                    <label>
+                        <input type="checkbox" name="course" value="fa"/>
+                        FrontEnd Avanzado
+                    </label>
+            </fieldset>
+            <label for="modalidad">Modalidad:</label>
+            <select name="modalidad" required> 
+                <option value="1">Presencial</option>
+                <option value="2">Online</option>
+            </select>
+            <hr>
+            <label for="work">¿Estás trabajando actualmente?:</label>
+            <select name="modalidad" required> 
+                <option value="yes">Si</option>
+                <option value="no">No</option>
+            </select>
+            <p>
+                <label>
+                    Teléfono de contacto:
+                    <input type="phone" placeholder="Ingresa tu teléfono" name="phone" maxlength="10"/>
+                </label>
+            </p>
+            <p>
+                <label>
+                    Descripción personal:
+                    <input type="text" placeholder="Cuentanos de ti" name="description" maxlength="300"/>
+                </label>
+            </p>
+            <input type="submit" value="Enviar"/>
+            <input type="reset" value="Limpiar"/>
+        </form>
+    </section>
+</body>
+</html>
