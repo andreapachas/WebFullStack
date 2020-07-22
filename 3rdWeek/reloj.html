@@ -60,6 +60,13 @@
         .seconds-container {
         animation: rotate 60s infinite steps(60);
         }
+        p::first-line {
+        color: #000000;
+        font-variant: small-caps;
+        font-size: 275px;
+        text-align:center;
+        z-index: 10;
+        }
         .hours {
         background: #000;
         height: 20%;
@@ -87,13 +94,6 @@
         transform-origin: 50% 80%;
         width: 1%;
         z-index: 8;
-        }
-        p::first-line {
-        color: #000000;
-        font-variant: small-caps;
-        font-size: 275px;
-        text-align:center;
-        z-index: 15;
         }
         @keyframes rotate {
         100% {

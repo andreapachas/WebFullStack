@@ -1,0 +1,28 @@
+body {
+  font: 100% Helvetica;
+  color: #fd0000;
+  background-color: #abc;
+  border: 8px dotted pink;
+  border-bottom: none;
+  border-radius: 64px;
+  height: 100px;
+}
+
+nav ul {
+  margin: 0;
+  padding: -10px;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+  border: 8px dashed grey;
+  border-top: none;
+  border-radius: 8px;
+}

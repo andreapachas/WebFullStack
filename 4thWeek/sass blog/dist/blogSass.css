@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+  /* padding: 0;
+    margin: 0; */
+  list-style: none;
+}
+
+body {
+  font-family: Calibri, monospace;
+}
+
+nav {
+  border-radius: 0;
+  border-bottom: 4px solid pink;
+  float: right;
+  text-align: right;
+}
+
+header {
+  text-align: center;
+  overflow: hidden;
+}
+
+h1 {
+  display: inline;
+}
+
+.logo {
+  float: left;
+}
+
+li {
+  list-style: none;
+}
+
+li:hover {
+  list-style: disc;
+}
+
+.title {
+  font-size: 24px;
+  color: red;
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+  color: gray;
+}
+
+.form-container {
+  border-radius: 0;
+  border: 4px dashed pink;
+}
+
+.article {
+  float: left;
+  width: 50%;
+  padding: 16px;
+}
+
+.moreButton {
+  display: block;
+  width: 50%;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  background: linear-gradient(191deg, pink 0%, red 27%, purple 100%);
+}

@@ -1,0 +1,39 @@
+$font-stack: Helvetica;
+$primary-color: rgb(253, 0, 0);
+$bg-color:#abc;
+$height: 100px;
+@mixin border($color,$style,$radius) {
+    border: 3px $style $color; 
+    border-radius: $radius;   
+}
+@mixin border($border-color, $border-style : dashed, $radius : 8px, $which-border : top) {
+  border: 8px $border-style $border-color;
+  border-#{$which-border}: none;
+  border-radius: $radius;
+}
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  background-color: $bg-color;
+  @include border(pink, dotted, 64px, bottom);
+  height: $height;
+}
+
+nav {
+  $height: $height + 8;
+    ul {
+      margin: 0;
+      padding: $height / 2 - 64px;
+      list-style: none;
+    }
+  
+    li { display: inline-block; }
+  
+    a {
+      display: block;
+      padding: 6px 12px;
+      text-decoration: none;
+      @include border(grey);
+    }
+}
