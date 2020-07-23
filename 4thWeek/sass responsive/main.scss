@@ -1,0 +1,62 @@
+$rootFontSize: 16px;
+$rootFontSizeSmall:12px;
+$primaryColor: purple;
+$secondaryColor: darkgreen;
+$primaryFontColor: gold;
+$responsiveFontSize: 8vmin; 
+/* esto pone el titulo de tamaño del 8% de vw(ancho), vh(altura), vmin(lado mas chico de referencia) 
+y vmax (lado mas largo de referencia)*/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+html{
+    font-size: $rootFontSize;
+}
+body{
+    background-color: grey;
+    color: $primaryFontColor;
+}
+.tittle{
+    font-size: $responsiveFontSize;
+}
+nav{
+    ul{
+        padding: 4px;
+        width: 100vw;
+    }
+    li{
+        display: inline-block;
+        width: 100%;
+        height: 64px;
+        background-color: $primaryColor;
+        margin: 4px 0;
+        font-size: 3rem;/*Toma multiplo de 16px-> 4rem=4*16px*/
+        text-align: center;    
+    }
+}
+@media screen and (max-width:360px){
+    nav li{
+        width: 40px;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width:769px){
+    html{
+        font-size: $rootFontSizeSmall;
+    }
+    nav li{
+        width: calc(25% - 2.25px);
+        height: 48px;
+    }
+}
+
+@media screen and (min-width:1367px){
+    nav li{
+        background-color: $secondaryColor;
+    }
+}
