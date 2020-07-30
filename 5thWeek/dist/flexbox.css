@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/* esto pone el titulo de tamaño del 8% de vw(ancho), vh(altura), vmin(lado mas chico de referencia) 
+y vmax (lado mas largo de referencia)*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: grey;
+  color: gold;
+}
+
+.tittle {
+  font-size: 8vmin;
+}
+
+nav ul {
+  display: flex;
+  width: 100vw;
+  flex-flow: nowrap column;
+  justify-content: center;
+  overflow: hidden;
+  transition: 2s;
+}
+
+nav li {
+  display: flex;
+  flex: 1 0 auto;
+  background-color: purple;
+  font-size: 3rem;
+  /*Toma multiplo de 16px-> 4rem=4*16px*/
+  text-align: center;
+}
+
+nav a {
+  flex: 1;
+}
+
+nav li:first-child {
+  flex-grow: 4;
+  flex-shrink: 1;
+}
+
+@media screen and (min-width: 768px) {
+  nav ul {
+    flex-direction: row;
+    height: 128px;
+  }
+  li {
+    align-items: center;
+  }
+}

@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body,main,header{
+    width: 100%;
+}
+main,aside, figure{
+    border: 1px solid gray;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 32px;
+    align-items: center;
+}
+main{
+    display: flex;
+    flex-flow: row;
+    justify-content: stretch;
+}
+aside{
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+    align-items: center;
+}
+span{
+    width: 80%;
+}
+section{
+    flex: 3;
+}
+figure{
+    display: flex;
+    flex-flow: column wrap;
+    padding: 32px;
+    div{
+        flex: 1 1 128px;
+        display: block;
+        img{
+            width: 80%;
+        }
+    }
+}
+figcaption{
+    flex: 2 1;
+}

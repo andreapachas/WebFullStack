@@ -1,0 +1,97 @@
+$defaultAlign:center;
+$borderColor: pink;
+$mainColor: red;
+$secondaryColor: purple;
+
+@mixin border($border-color, $border-style : solid, $whichBorder : false, $radius : 0) {
+    $size: 4px;
+    border-radius: $radius;
+    @if $whichBorder {
+        border-#{$whichBorder}: $size $border-style $border-color;
+    } @else {
+        border: $size $border-style $border-color;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    /* padding: 0;
+    margin: 0; */
+    list-style: none;
+}
+body { font-family: Calibri, monospace; }
+nav {
+    @include border($borderColor, solid, bottom);
+    float: right;
+    text-align: right;
+}
+header {
+    text-align: $defaultAlign;
+    overflow: hidden;
+}
+.main-title {
+    float: left;
+}
+h1 {
+    display: inline;
+}
+.logo {
+    float: left;
+}
+li {
+    list-style: none;
+}
+li:hover {
+    list-style: disc;
+}
+.title {
+    font-size: 24px;
+    color: $mainColor;
+    // text-align: $defaultAlign;
+}
+p {
+    font-size: 16px;
+    color: gray;
+}
+.form-container {
+    @include border($borderColor, dashed);
+}
+.article-container {
+    overflow: hidden;
+}
+.article {
+    float: left;
+    width: 50%;
+    padding: 16px;
+}
+.moreButton {
+    display: block;
+    width: 50%;
+    height: 32px;
+    line-height: 32px;
+    text-align: $defaultAlign;
+    color: white;
+    font-weight: bolder;
+    background: linear-gradient(191deg, $borderColor 0%, $mainColor 27%, $secondaryColor 100%);
+}
+
+@media screen and (max-width: 360px) {
+    .article {
+        float: none;
+        width: 100%;
+    }
+    .main-title {
+        float: none;
+        overflow: hidden;
+    }
+    nav {
+        float: none;
+        text-align: center;
+        ul {
+            width: 100%;
+        }
+        li {
+            display: inline-block;
+        }
+    }
+}
