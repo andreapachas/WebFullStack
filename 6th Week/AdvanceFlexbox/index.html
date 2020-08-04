@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex avanzado</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .box {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .rec {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            height: 90px;
+            width: 150px;
+            background-color: brown;
+        }
+        
+        .selected {
+            align-self: flex-end;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section>
+        <div class="box">
+            <div class="rec"></div>
+            <div class="rec"></div>
+            <div class="rec selected"></div>
+            <div class="rec"></div>
+        </div>
+    </section>
+</body>
+
+</html>

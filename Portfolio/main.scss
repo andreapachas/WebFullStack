@@ -1,0 +1,122 @@
+$rootFontSize: 4rem;
+$rootFontSizeSmall:2rem;
+$primaryColor: rgb(249, 240, 250);
+$secondaryColor: white;
+$btnColor: rgb(197, 150, 197);
+$btnFontColor:white;
+$primaryFontColor: #8e24aa;
+$secondaryFontColor: rgb(194, 181, 189);
+$responsiveFontSize: 8vmin; 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: $primaryColor;
+}
+.navBar{
+    background-color: $secondaryColor;
+}
+.btn{
+    background-color: $btnColor;
+    color: $btnFontColor;
+    font-style: bold;
+    border-radius: 25px;
+    border: $btnColor; 
+    padding-top: 2px;
+    padding-left: 9px;
+    padding-right: 9px;
+    margin-left: 1rem;
+    border-bottom-width: 4px;
+}
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px;
+    max-width: 90rem;
+}
+.imageDev{
+    width: 450px;
+    padding-right: 10%;
+}
+.banner{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.textIntro{
+    flex: 1 1 25%;
+    padding-left: 5%;
+}
+.saludo{
+    font-size: $rootFontSize;
+    font-style: bold;
+    color: $primaryFontColor;
+}
+.descSaludo{
+    font-size: $rootFontSizeSmall;
+    font-style: light;
+}
+.formFreelance{
+    margin-top: 3rem;
+    text-align: center;
+}
+.formText{
+    display: block;
+    color: $secondaryFontColor;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.containerForm{
+    display: flex;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    border-radius: 15px;
+    background-color: white;
+    padding: 2rem;
+    justify-content: center;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.textareaForm{
+    flex: 1 1 auto;
+    justify-content: center;
+    color: $secondaryFontColor;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+    outline: none;
+}
+.sectionStyle{
+    margin-top: 4rem;
+    color: $primaryFontColor;
+    max-width: 56rem;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.sectionTittle{
+    font-size: 1.875rem;
+    font-style: bold;
+    align-items: center;
+}
+.containerbox{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-flow: wrap;
+
+}
+.articleBox{
+    flex: 1;
+    background-color: $secondaryColor;
+    box-shadow: 1px 1px 1px #999;
+    color: $secondaryFontColor;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin: 1rem;
+    max-width: 24rem;
+    padding: 1rem; 
+}

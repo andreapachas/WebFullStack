@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="dist/main.css">
+</head>
+<body>
+    <header class="intro">
+        <nav class="navBar">
+            <ul>
+                <li><a>Educación</a></li>
+                <li><a>Experiencia</a></li>
+                <li><a>Proyectos</a></li>
+                <li><a>Mediums</a></li>
+                <li><a>Publicaciones</a></li>
+                <!-- <li><a>Podcast</a></li>
+                <li><a>Youtube</a></li> -->
+                <!-- <li><a>Emprendimientos</a></li> -->
+            </ul>
+        </nav>
+        <div class="container">
+            <div class="banner">
+                <div class="textIntro">
+                    <h1 class="saludo">¡Hola :) Soy Andrea!</h1>
+                    <p class="descSaludo font-light">Soy ingeniera de Software y emprendedora peruana</p>
+                </div>
+                <img class="imageDev" src="DreaSoftware.svg" alt="mujer ingeniera de software trabajando"></img>
+            </div>
+            <div>
+            </div>
+        </div>
+        <form class="formFreelance">
+            <label htmlFor ="contact-content" class="formText">Cuéntame de esa idea que quieres hacer realidad: </label>
+            <div class="containerForm">
+                <textarea 
+                id="contact-content"
+                name="contact-content"
+
+                class="textareaForm"></textarea>
+                <button class="btn">Enviar</button>
+            </div>
+        </form>
+    </header>
+    <section>
+        <div class="sectionStyle">
+            <h2 class="sectionTittle">
+                Conoce sobre mi formación académica
+            </h2>
+            <nav class="containerbox">
+                    <article class="articleBox">
+                        <header>
+                            <p className="font-bold leading-loose">Universidad Peruana de Ciencias Aplicadas</p>
+                            <div className="mt-8">
+                            <p className="font-light">Ingeniería de Software</p>
+                            <a class="btn">Ir</a>
+                            <a href=""></a>
+                            </div>
+                        </header>
+                    </article>
+                    <article class="articleBox">
+                        <header>
+                            <p className="font-bold leading-loose">Universidad Peruana de Ciencias Aplicadas</p>
+                            <div className="mt-8">
+                            <p className="font-light">Mención en Innovación y emprendimiento</p>
+                            <a class="btn">Ir</a>
+                            <a href=""></a>
+                            </div>
+                        </header>
+                    </article>
+            </nav>
+        </div>
+    </section>
+    <section>
+        <div class="sectionStyle">
+                <h2 class="sectionTittle">Mis proyectos</h2>
+                <p>Colaboración y contribución de codigo</p>
+            <ul className="repos-list mt-4">
+                <!-- {
+                    repos.map(repo=> <Repo repo={repo} key={repo.id}/>)
+                } -->
+            </ul>
+            <div class="articleBox">
+                <a href="https://github.com/andrea2811" className="btn" target="_blank" rel="noopener noreferrer">
+                    Ver más en GitHub
+                </a>
+            </div>
+    </section>
+</body>
+</html>

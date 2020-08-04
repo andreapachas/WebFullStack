@@ -1,0 +1,73 @@
+$primaryColor: #FFFFFF;
+$secondaryColor: #0000EC;
+$primaryFontColor: #060A24;
+$secondaryFontColor: #FFFFFF;
+$primaryBackgroundColor: #000000;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    width: 100%;
+    background-color: $primaryColor;
+    input {
+        display: none;
+    }
+    label {
+        display: none;
+        padding:10px;
+    }
+    .barra{
+        
+        ul{
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            li {
+                // display: block;
+                a {
+                    text-decoration: none;
+                    display: block;
+                    padding:10px;
+                    color:$primaryFontColor;
+                    &:hover {
+                        background-color: $secondaryColor;
+                        color: $secondaryFontColor;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:769px){
+    
+    nav{
+        .fa:before {
+            content: "\f0c9";
+        }
+        label{
+            display: block;
+        }
+        .barra {
+            position: absolute;
+            margin: -100%;
+            background-color: $secondaryColor;
+            width: 100%;
+            ul{
+                flex-direction: column;
+                justify-content: flex-end;
+                li{
+                    a{
+                        color: $secondaryFontColor;
+                    }
+                }
+
+            }
+        }
+        #box:checked ~.barra{
+            margin: 0;
+        }
+    }
+}
