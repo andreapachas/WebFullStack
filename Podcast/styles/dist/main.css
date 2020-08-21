@@ -404,6 +404,7 @@ footer .socialmedia-container i {
     font-size: 18px;
   }
   .landing-page .btn:hover {
+    color: #FFFFFF;
     background-image: linear-gradient(to left, #0000FE, #00F0B8);
   }
   .landing-page p {

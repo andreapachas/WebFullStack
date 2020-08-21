@@ -374,6 +374,7 @@ footer .socialmedia-container i{
         font-size: 18px; 
     }
     .landing-page .btn:hover {
+        color: $primaryColor;
         background-image: linear-gradient(to left, $btnGradient); 
     }
     .landing-page p {
