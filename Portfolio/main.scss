@@ -1,22 +1,62 @@
 $rootFontSize: 4rem;
 $rootFontSizeSmall:2rem;
-$primaryColor: rgb(249, 240, 250);
+$primaryColor:linear-gradient(180deg, rgba(245,225,232,0.6278886554621849) 0%, rgba(189,181,219,0.39539565826330536) 66%, rgba(148,187,233,1) 100%);
 $secondaryColor: white;
-$btnColor: rgb(197, 150, 197);
+$btnColor: rgba(149, 66, 149, 0.657);
 $btnFontColor:white;
 $primaryFontColor: #8e24aa;
-$secondaryFontColor: rgb(194, 181, 189);
-$responsiveFontSize: 8vmin; 
+$secondaryFontColor: gray;
+$responsiveFontSize: 10vmin; 
+$responsiveSmallFontSize: 4vmin; 
+$navColor: #8e24aa;
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
-    background-color: $primaryColor;
+    background: $primaryColor;
+    display: grid;
+    grid-row: 3;
 }
-.navBar{
-    background-color: $secondaryColor;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    width: 100%;
+    input {
+        display: none;
+    }
+    label {
+        display: none;
+        padding:10px;
+    }
+    .barra{
+        
+        ul{
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            li {
+                // display: block;
+                a {
+                    text-decoration: none;
+                    display: block;
+                    padding:20px;
+                    color:$primaryFontColor;
+                    &:hover {
+                        background-color: $navColor;
+                        color: $btnFontColor;
+                    }
+                }
+            }
+        }
+    }
 }
 .btn{
     background-color: $btnColor;
@@ -27,18 +67,18 @@ body{
     padding-top: 2px;
     padding-left: 9px;
     padding-right: 9px;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     border-bottom-width: 4px;
 }
 .container{
     margin-left: auto;
     margin-right: auto;
-    padding: 12px;
+    padding-top: 5px;
     max-width: 90rem;
 }
 .imageDev{
-    width: 450px;
-    padding-right: 10%;
+    width: 40%;
+    padding-top: 10%;
 }
 .banner{
     display: flex;
@@ -71,13 +111,13 @@ body{
 }
 .containerForm{
     display: flex;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: -4px -6px 18px -4px rgba(2, 9, 6, 0.75);
     border-radius: 15px;
     background-color: white;
     padding: 2rem;
     justify-content: center;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 .textareaForm{
     flex: 1 1 auto;
@@ -98,14 +138,14 @@ body{
     text-align: center;
 }
 .sectionTittle{
-    font-size: 1.875rem;
+    font-size: $rootFontSize;
     font-style: bold;
     align-items: center;
 }
 .containerbox{
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     flex-flow: wrap;
 
 }
@@ -119,4 +159,45 @@ body{
     margin: 1rem;
     max-width: 24rem;
     padding: 1rem; 
+}
+@media (max-width:769px){
+    .imageDev{
+        width: 75%;
+    }
+    .saludo{
+        font-size: $responsiveFontSize;
+    }
+    .descSaludo{
+        font-size: $responsiveSmallFontSize;
+    }
+    .sectionTittle{
+        font-size: $responsiveFontSize;
+    }
+    nav{
+        .fa:before {
+            content: "\f0c9";
+        }
+        label{
+            display: block;
+        }
+        .barra {
+            position: absolute;
+            margin: -100%;
+            background-color: $navColor;
+            width: 100%;
+            ul{
+                flex-direction: column;
+                justify-content: flex-end;
+                li{
+                    a{
+                        color: $btnFontColor;
+                    }
+                }
+
+            }
+        }
+        #box:checked ~.barra{
+            margin: 0;
+        }
+    }
 }

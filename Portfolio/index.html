@@ -5,21 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="dist/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header class="intro">
-        <nav class="navBar">
-            <ul>
-                <li><a>Educación</a></li>
-                <li><a>Experiencia</a></li>
-                <li><a>Proyectos</a></li>
-                <li><a>Mediums</a></li>
-                <li><a>Publicaciones</a></li>
-                <!-- <li><a>Podcast</a></li>
-                <li><a>Youtube</a></li> -->
-                <!-- <li><a>Emprendimientos</a></li> -->
-            </ul>
+         <nav class="nav">
+            <input type="checkbox" id="box">
+            <label for="box">
+                <i class="fa" aria-hidden="true"></i>
+            </label>
+            <div class="barra">
+                <ul>
+                    <li><a href="#">Educación</a></li>
+                    <li><a href="#">Experiencia</a></li>
+                    <li><a href="#">Publicaciones</a></li>
+                    <li><a href="#">contacto</a></li>
+                </ul>
+            </div>
         </nav>
+        
         <div class="container">
             <div class="banner">
                 <div class="textIntro">
@@ -34,11 +38,7 @@
         <form class="formFreelance">
             <label htmlFor ="contact-content" class="formText">Cuéntame de esa idea que quieres hacer realidad: </label>
             <div class="containerForm">
-                <textarea 
-                id="contact-content"
-                name="contact-content"
-
-                class="textareaForm"></textarea>
+                <textarea class="textareaForm" rows="4" cols="50"></textarea>
                 <button class="btn">Enviar</button>
             </div>
         </form>
@@ -76,16 +76,15 @@
         <div class="sectionStyle">
                 <h2 class="sectionTittle">Mis proyectos</h2>
                 <p>Colaboración y contribución de codigo</p>
-            <ul className="repos-list mt-4">
-                <!-- {
-                    repos.map(repo=> <Repo repo={repo} key={repo.id}/>)
-                } -->
-            </ul>
-            <div class="articleBox">
-                <a href="https://github.com/andrea2811" className="btn" target="_blank" rel="noopener noreferrer">
-                    Ver más en GitHub
-                </a>
-            </div>
+                <nav class="containerbox">
+                    <article class="articleBox">
+                        <header>
+                            <a href="https://github.com/andrea2811" class="btn">
+                                Ver más en GitHub
+                            </a>
+                        </header>
+                    </article>
+                </nav>
     </section>
 </body>
 </html>
