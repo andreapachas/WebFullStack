@@ -59,7 +59,6 @@ header {
     content: ".";
   }
 }
-
 .btn {
   background: #00F3BB;
   font-size: medium;
@@ -91,16 +90,19 @@ nav .navbar {
     box-sizing: border-box;
     width: 100%;
   }
+
   nav .nav-options li {
     height: 22.9%;
     display: flex;
     align-items: center;
   }
+
   nav .nav-options li a {
     color: #FFFFFF;
     font-size: 16px;
     line-height: 28px;
   }
+
   nav .navbar:checked ~ .nav-options {
     z-index: 1;
     position: absolute;
@@ -111,24 +113,27 @@ nav .navbar {
     width: 100%;
     background-color: #0000EC;
   }
+
   nav .navbar:checked ~ .nav-options li {
     margin-bottom: 24px;
     margin-left: 5%;
   }
+
   nav .navbar:checked ~ .nav-options li a {
     font-size: 16px;
     color: #FFFFFF;
     letter-spacing: 0;
     line-height: 28px;
   }
+
   nav .navbar:checked + .btn-nav .fa-bars {
     display: none;
   }
+
   nav .navbar:checked + .btn-nav .fa-times {
     display: block;
   }
 }
-
 nav .btn-nav {
   display: inline;
 }
@@ -335,9 +340,11 @@ footer .socialmedia-container i {
     margin: 0;
     padding: 0;
   }
+
   body {
     margin: 0;
   }
+
   header {
     position: sticky;
     top: 0;
@@ -345,53 +352,65 @@ footer .socialmedia-container i {
     z-index: 3;
     background-color: #FFFFFF;
   }
+
   header .fa-bars {
     display: none;
   }
+
   header nav {
     justify-content: space-between;
     margin: 0 6.9%;
     height: 80px;
   }
+
   header nav .logo {
     width: 36px;
   }
+
   header nav .nav-options {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
   header nav .nav-options li {
     padding: 0;
     margin-left: 48px;
   }
+
   header nav .nav-options li a {
     font-size: 16px;
     color: #060a24;
     letter-spacing: 0;
     line-height: 28px;
   }
+
   header nav .nav-options li a:hover {
     color: #00F3BB;
     text-decoration: line-through;
   }
+
   header nav .nav-options li a:active {
     text-decoration: line-through;
     color: #060a24 56%;
   }
+
   .landing-page {
     margin-left: 13.9%;
     padding: 0;
   }
+
   .landing-page h1 {
     margin-top: 120px;
     font-size: 64px;
     width: 100%;
   }
+
   .landing-page h1:after {
     content: ".";
     color: #0000EC;
   }
+
   .landing-page .btn {
     width: 226px;
     height: 56px;
@@ -403,20 +422,24 @@ footer .socialmedia-container i {
     justify-content: center;
     font-size: 18px;
   }
-  .landing-page .btn:hover {
+
+  .btn:hover {
     color: #FFFFFF;
     background-image: linear-gradient(to left, #0000FE, #00F0B8);
   }
+
   .landing-page p {
     visibility: hidden;
     width: 628px;
     margin-bottom: 56px;
   }
+
   .landing-page p:before {
     font-size: 16px;
     content: "El portal de podcasts que explora el mundo de la programación y la tecnología. Nuevos episodes, todos los jueves cada 15 días.";
     visibility: visible;
   }
+
   .episodes {
     padding: 0;
     margin: 0;
@@ -424,12 +447,14 @@ footer .socialmedia-container i {
     padding-top: 176px;
     padding-bottom: 2rem;
   }
+
   .episodes h2 {
     margin: 0;
     padding: 0;
     margin-left: 13.9%;
     font-size: 48px;
   }
+
   .episodes .podcast-container {
     padding: 0;
     margin: 26px 6.9%;
@@ -437,75 +462,90 @@ footer .socialmedia-container i {
     justify-content: space-between;
     flex-wrap: wrap;
   }
+
   .episodes .podcast-container iframe {
     margin: 0;
     max-width: 47.6%;
     max-height: 5.9%;
     padding-bottom: 1.8%;
   }
+
   .us .us-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
+
   .us .us-container img {
     margin-right: 0;
     width: 31.8%;
     transform: translateY(-17px);
     margin-left: 13.9%;
   }
+
   .us .us-container .text-container {
     margin: 0;
     padding: 0;
     max-width: 32%;
     margin-right: 17.8%;
   }
+
   .us .us-container .text-container h2 {
     width: 100%;
     font-size: 48px;
     margin-bottom: 24px;
   }
+
   .us .us-container .text-container p {
     line-height: 24px;
     font-size: 16px;
     font-weight: 400;
   }
+
   .interviews h2 {
     padding: 0;
     font-size: 48px;
     margin-left: 13.9%;
     margin-bottom: 36px;
   }
+
   .interviews .galery {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
+
   .interviews .galery img {
     width: calc(100%/3);
     height: 100%;
   }
+
   .topics {
     padding: 0;
   }
+
   .topics h2 {
     margin-left: 13.9%;
     font-size: 48px;
     margin-top: 64px;
   }
+
   .topics .topics-container {
     margin: 56px 15.3% 34px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
+
   .topics .topics-container div {
     margin: 0;
   }
+
   .topics .topics-container div h3 {
     max-width: 220px;
   }
+
   .news {
     display: flex;
     flex-direction: column;
@@ -513,26 +553,32 @@ footer .socialmedia-container i {
     height: 518px;
     overflow: hidden;
   }
+
   .news .parallelogram-background {
     height: 800px;
   }
+
   .news h2 {
     font-size: 48px;
   }
+
   .news a {
     font-size: 18px;
     padding: 16px 4.1%;
   }
+
   .news .boton:hover {
     color: white;
     background-image: linear-gradient(to left, #0000FE, #00F0B8);
   }
+
   footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
   }
+
   footer p {
     margin: 0;
     padding: 0;
@@ -543,9 +589,11 @@ footer .socialmedia-container i {
     font-weight: 500;
     line-height: 28px;
   }
+
   footer .socialmedia-container {
     margin-right: 6.9%;
   }
+
   footer .socialmedia-container i {
     margin-right: 1.2rem;
     font-size: 18px;
