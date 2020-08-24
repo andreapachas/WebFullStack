@@ -1,105 +1,78 @@
 $FontSizeXL: 64px;
 $FontSizeL: 48px;
 $FontSizeLarge: 36px;
-$FontSizeMedium:16px;
-$FontSizeSmall:14px;
+$FontSizeMedium: 16px;
+$FontSizeSmall: 14px;
 $primaryColor: #FFFFFF;
 $secondaryColor: #0000FF;
-$gradientParallelogram:#0000A3;
+$gradientParallelogram: #0000A3;
 $primaryFontColor: #060a24;
 $secondaryFontColor: #FFFFFF;
-$navResponsiveColor:#0000EC;
-$decorationNavColor:#00F3BB;
-$btnGradient:#0000FE,#00F0B8;
-$btnColor:#00F3BB;
-$FontFamily:"IBM Plex Sans", sans-serif;
+$navResponsiveColor: #0000EC;
+$decorationNavColor: #00F3BB;
+$btnGradient: #0000FE, #00F0B8;
+$btnColor: #00F3BB;
+$FontFamily: "IBM Plex Sans", sans-serif;
 * {
     padding: 0px;
     margin: 0px;
     border: 0px;
-    color: $primaryFontColor; }
-ul{
+    color: $primaryFontColor; 
+}
+ul {
     list-style: none;
 }
 a {
     text-decoration: none;
-    letter-spacing: 0; }
-body{
+    letter-spacing: 0; 
+}
+body {
     font-family: "IBM Plex Mono", monospace;
 }
-p h1 h2 .btn {
+h1, h2, p, .btn {
     letter-spacing: 0;
 }
-header{
+header {
     padding: 0 5%;
-}
-.landing-page{
-    padding: 0 5%;
-    display: flex;
-    flex-direction: column;
-}
-.landing-page h1{
-    font-family: $FontFamily;
-    font-size: $FontSizeLarge;
-    line-height: 42px;
-    margin-top: 29px;
-    margin-bottom: 16px;
-    text-align: left;
-    font-weight: 300;
-    width: 80%;
-}
-.landing-page h1 .line-through{
-    text-decoration: line-through;
-}
-.landing-page p{ 
-    font-size: $FontSizeSmall;
-    line-height: 22px;
-    text-align: justify;
-}
-@media (max-width: 900px) {
-    .landing-page h1:after {
-      content: "."; 
-    } 
-}
-
-.btn{
-    background: $btnColor;
-    font-size: medium;
-    text-align: center;
-    line-height: 24px;
-    margin: 13px 0px 24px;
-    padding: 10px 25px;
-    font-weight: 500;
-}
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 44px;
-}
-nav .logo{
-    width: 24px;
-}
-nav .navbar{
-    display: none;
-}
-@media (max-width: 900px) {
-    nav .nav-options{
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 44px;
+        .logo {
+            width: 24px;
+        }
+        .navbar {
+            display: none;
+        }
+        .btn-nav {
+            display: inline;
+            .fa-bars {
+                font-size: 18px;
+            }
+            .fa-times {
+                font-size: 18px;
+                display: none;
+            }
+        }
+    }
+    @media (max-width: 952px) {
+    .nav-options {
         display: none;
         box-sizing: border-box;
         width: 100%;
+        li {
+            height: 22.9%;
+            display: flex;
+            align-items: center;
+            a {
+                color: $secondaryFontColor;
+                font-size: $FontSizeMedium;
+                line-height: 28px;
+            }
+        }
     }
-    nav .nav-options li{
-        height: 22.9%;
-        display: flex;
-        align-items: center;
-    }
-    nav .nav-options li a{
-        color: $secondaryFontColor;
-        font-size: $FontSizeMedium;
-        line-height: 28px;
-    }
-    nav .navbar:checked ~ .nav-options{
+    .navbar:checked ~ .nav-options {
         z-index: 1;
         position: absolute;
         top: 44px;
@@ -108,63 +81,90 @@ nav .navbar{
         display: block;
         width: 100%;
         background-color:$navResponsiveColor;
+        li {
+            margin-bottom: 24px;
+            margin-left: 5%;
+            a {
+                font-size: $FontSizeMedium;
+                color: $secondaryFontColor;
+                letter-spacing: 0;
+                line-height: 28px; 
+            }
+        }
     }
-    nav .navbar:checked ~ .nav-options li{
-        margin-bottom: 24px;
-        margin-left: 5%;
-    }
-    nav .navbar:checked ~ .nav-options li a{
-        font-size: $FontSizeMedium;
-        color: $secondaryFontColor;
-        letter-spacing: 0;
-        line-height: 28px; 
-    }
-    nav .navbar:checked + .btn-nav .fa-bars {
-        display: none;
-    }
-    nav .navbar:checked + .btn-nav .fa-times {
-        display: block; 
+    .navbar:checked + .btn-nav {
+        .fa-bars {
+            display: none;
+        }
+        .fa-times {
+            display: block; 
+        }
     }
 }
-nav .btn-nav{
-    display: inline;
 }
-nav .btn-nav .fa-bars{
-    font-size: 18px;
+.landing-page {
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    h1 {
+        font-family: $FontFamily;
+        font-size: $FontSizeLarge;
+        line-height: 42px;
+        margin-top: 29px;
+        margin-bottom: 16px;
+        text-align: left;
+        font-weight: 300;
+        width: 80%;
+    }
+    .line-through {
+        text-decoration: line-through;
+    }
+    p { 
+        font-size: $FontSizeSmall;
+        line-height: 22px;
+        text-align: justify;
+    }
+    @media (max-width: 952px) {
+        h1:after {
+          content: "."; 
+        } 
+    }
+    .btn {
+        background: $btnColor;
+        font-size: medium;
+        text-align: center;
+        line-height: 24px;
+        margin: 13px 0px 24px;
+        padding: 10px 25px;
+        font-weight: 500;
+    }
 }
-nav .btn-nav .fa-times{
-    font-size: 18px;
-    display: none;
-}
-
-.episodes{
+.episodes {
     position: relative;
     padding-top: 4rem;
     padding-bottom: 4rem;
+    h2 {
+        font-family: $FontFamily;
+        font-size: $FontSizeLarge;
+        color: $secondaryFontColor;
+        line-height: 42px;
+        font-weight: 300;
+        padding: 0 5%;
+    }
+    .podcast-container {
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        justify-content: center;
+        padding-bottom: 0.9%;
+        margin: 1.5rem 3.4% 0;
+        iframe {
+            width: 100%;
+            height: 164px;
+        }
+    }
 }
-.episodes h2{
-    font-family: $FontFamily;
-    font-size: $FontSizeLarge;
-    color: $secondaryFontColor;
-    line-height: 42px;
-    font-weight: 300;
-    padding: 0 5%;
-}
-.episodes .podcast-container{
-    display: flex;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-    justify-content: center;
-    padding-bottom: 0.9%;
-    margin: 1.5rem 3.4% 0;
-}
-.episodes .podcast-container iframe{
-    margin-bottom: 0.2%;
-    border: 0;
-    width: 100%;
-    height: 225px;
-}
-.parallelogram-background{
+.parallelogram-background {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -172,353 +172,356 @@ nav .btn-nav .fa-times{
     left: 0px;
     width: 100%;
     height: 100%;
-    transform: skewY(-6deg);
+    transform: skewY(-5deg);
     transform-origin: top right;
     z-index: -1;
-    background-image: linear-gradient(225deg, $secondaryColor 0%,$gradientParallelogram 100%);
+    background-image: linear-gradient(225deg, $secondaryColor 0%, $gradientParallelogram 100%);
 }
-.us{
+.us {
     padding: 0 5%;
+    .us-container {
+        display: flex;
+        flex-direction: column; 
+        img {
+            width: 100%;
+            transform: translateY(-55px);
+        }
+        .text-container {
+            margin: 0.5% 0 54px;
+            h2 {
+                font-family: $FontFamily;
+                font-size: $FontSizeLarge;
+                line-height: 42px;
+                font-weight: 300;
+                width: 80%;
+                margin-bottom: 1%;
+            }
+            p {
+                font-weight: 500;
+                letter-spacing: 0;
+                line-height: 22px;
+                font-size: $FontSizeSmall;  
+            }
+        }
+    }
 }
-.us .us-container{
-    display: flex;
-    flex-direction: column; 
+.interviews {
+    h2 {
+        font-family: $FontFamily;
+        font-size: $FontSizeLarge;
+        line-height: 42px;
+        font-weight: 500;
+        padding: 0 5%;
+        margin-bottom: 1%;
+      }
+    .galery {
+        display: flex;
+        flex-direction: column;
+        margin: 3% 0 0;
+        img {
+            width: 100%;
+        }
+    }
 }
-.us .us-container img{
-    width: 100%;
-    transform: translateY(-55px);
-}
-.us .us-container .text-container{
-    margin: 0.5% 0 54px;
-}
-.us .us-container .text-container h2{
-    font-family: $FontFamily;
-    font-size: $FontSizeLarge;
-    line-height: 42px;
-    font-weight: 300;
-    width: 80%;
-    margin-bottom: 1%;
-}
-.us .us-container .text-container p{
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 22px;
-    font-size: $FontSizeSmall;  
-}
-.interviews h2{
-  font-family: $FontFamily;
-  font-size: $FontSizeLarge;
-  line-height: 42px;
-  font-weight: 500;
-  padding: 0 5%;
-  margin-bottom: 1%;
-}
-.interviews .galery{
-    display: flex;
-    flex-direction: column;
-    margin: 3% 0 0;
-}
-.interviews .galery img{
-    width: 100%;
-}
-.topics{
-    padding: 0 5%
-}
-.topics h2{
-    font-size: $FontSizeLarge;
-    font-family: $FontFamily;
-    line-height: 42px;
-    margin-top: 3rem;
-    font-weight: 100;
-    margin-bottom: 2rem;
-}
-.topics .topics-container figure{
-    display: flex;
-    flex-direction: column;
-    align-self: flex-start;
-    margin: 49px 0;
-}
-.topics .topics-container figure figcaption{
-    margin-top: 13px;
-    font-family:$FontFamily;
-    font-size: 24px;
-    color: $primaryFontColor;
-    letter-spacing: 0;
-    text-align: center; 
-}
-.news{
+.topics {
+    padding: 0 5%;
+    h2 {
+        font-size: $FontSizeLarge;
+        font-family: $FontFamily;
+        line-height: 42px;
+        margin-top: 3rem;
+        font-weight: 100;
+        margin-bottom: 2rem;
+    }
+    .topics-container {
+        figure {
+            display: flex;
+            flex-direction: column;
+            align-self: flex-start;
+            margin: 49px 0;
+            figcaption {
+                margin-top: 13px;
+                font-family:$FontFamily;
+                font-size: 24px;
+                color: $primaryFontColor;
+                letter-spacing: 0;
+                text-align: center; 
+            }
+        }
+    }
+} 
+.news {
     position: relative;
-    padding: 0 5%;
+    padding: 0 5% 12%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden; 
+    overflow: hidden;
+    .parallelogram-background {
+        height: 360px;
+    }
+    h2 {
+        font-family: $FontFamily;
+        padding-top: 4rem;
+        margin-bottom: 2rem;
+        font-size: $FontSizeLarge;
+        font-weight: 300;
+        color: $secondaryFontColor;
+        text-align: center;
+        line-height: 42px;
+        width: 80%; 
+    }
+    .btn {
+        background: $btnColor;
+        font-weight: 500;
+        font-size: medium;
+        text-align: center;
+        padding: 0.9%;
+        width: 100%;
+    }
 }
-.news .parallelogram-background{
-    height: 360px;
-}
-.news h2{
-    font-family: $FontFamily;
-    padding-top: 4rem;
-    margin-bottom: 2rem;
-    font-size: $FontSizeLarge;
-    font-weight: 300;
-    color: $secondaryFontColor;
-    text-align: center;
-    line-height: 42px;
-    width: 80%; 
-}
-.news .btn{
-    font-weight: 500;
-    text-align: center;
-    margin-bottom: 4rem;
-    width: 85%; 
-}
-footer{
+footer {
     position: relative;
     bottom: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: #ffffff;
-    height: 88px; 
+    height: 88px;
+    p {
+        padding-top: 24px;
+        text-align: center;
+        font-size: $FontSizeSmall;
+        color: $primaryFontColor;
+        letter-spacing: 0;
+        line-height: 22px;
+    }
+    .socialmedia-container {
+        display: flex;
+        justify-content: space-around;
+        margin: 5% 8.1%; 
+        i {
+            font-size: $FontSizeMedium; 
+        }
+    }
 }
-footer p{
-    padding-top: 24px;
-    text-align: center;
-    font-size: $FontSizeSmall;
-    color: $primaryFontColor;
-    letter-spacing: 0;
-    line-height: 22px; 
-}
-footer .socialmedia-container{
-    display: flex;
-    justify-content: space-around;
-    margin: 5% 8.1%; 
-}
-footer .socialmedia-container i{
-    font-size: $FontSizeMedium; 
-}
-
-@media (min-width: 900px){
+@media (min-width: 952px) {
     * {
         margin: 0;
         padding: 0; 
     }
-    body{
+    body {
         margin: 0;
     }
-    header{
+    header {
         position: sticky;
         top: 0;
         padding: 0;
         z-index: 3;
         background-color: $primaryColor;
+        nav {
+            .logo {
+                width: 36px;
+            }
+            justify-content: space-between;
+            margin: 0 6.9%;
+            height: 80px;
+            .fa-bars {
+                display: none;
+            }
+            .nav-options {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                li {
+                    padding: 0;
+                    margin-left: 48px;
+                    a {
+                        font-size: $FontSizeMedium;
+                        color: $primaryFontColor;
+                        letter-spacing: 0;
+                        line-height: 28px;
+                    }
+                    a:hover {
+                        color:$decorationNavColor;
+                        text-decoration: line-through; 
+                    }
+                    a:active {
+                        text-decoration: line-through;
+                        color: $primaryFontColor 56%;
+                    }
+                }
+            }
+        }
+       
     }
-    header .fa-bars{
-        display: none;
-    }
-    header nav{
-        justify-content: space-between;
-        margin: 0 6.9%;
-        height: 80px;
-    }
-    header nav .logo{
-        width: 36px;
-    }
-    header nav .nav-options{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    header nav .nav-options li{
-        padding: 0;
-        margin-left: 48px;
-    }
-    header nav .nav-options li a{
-        font-size: $FontSizeMedium;
-        color: $primaryFontColor;
-        letter-spacing: 0;
-        line-height: 28px;
-    }
-    header nav .nav-options li a:hover{
-        color:$decorationNavColor;
-        text-decoration: line-through; 
-    }
-    header nav .nav-options li a:active{
-        text-decoration: line-through;
-        color: $primaryFontColor 56%;
-    }
-    .landing-page{
+    .landing-page {
         margin-left: 13.9%;
-        padding: 0;
-    }
-    .landing-page h1 {
-        margin-top: 120px;
-        font-size: $FontSizeXL;
-        width: 100%; 
-    }
-    .landing-page h1:after {
-        content: ".";
-        color: #0000EC; 
-    }
-    .landing-page .btn {
-        width: 226px;
-        height: 56px;
-        padding: 0;
-        margin: 0;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 18px; 
-    }
-    .btn:hover {
-        color: $primaryColor;
-        background-image: linear-gradient(to left, $btnGradient); 
-    }
-    .landing-page p {
-        visibility: hidden;
-        width: 628px;
-        margin-bottom: 56px; 
-    }
-    .landing-page p:before {
-        font-size: $FontSizeMedium;
-        content: "El portal de podcasts que explora el mundo de la programación y la tecnología. Nuevos episodes, todos los jueves cada 15 días.";
-        visibility: visible; 
+        padding: 3.1% 0 0;
+        h1 {
+            font-size: $FontSizeXL;
+            width: 100%; 
+            line-height: 84px;
+        }
+        h1:after {
+            content: ".";
+            color: #0000EC; 
+        }
+        p {
+            visibility: hidden;
+            width: 49.6%;
+            margin-bottom: 1.4%;
+        }
+        p:before {
+            font-size: $FontSizeMedium;
+            content: "El portal de podcasts que explora el mundo de la programación y la tecnología. Nuevos episodes, todos los jueves cada 15 días.";
+            visibility: visible; 
+        }
+        .btn {
+            width: 226px;
+            height: 56px;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px; 
+        }
+        .btn:hover {
+            color: $primaryColor;
+            background-image: linear-gradient(to left, $btnGradient); 
+        }
     }
     .episodes {
-        padding: 0;
-        margin: 0;
+        padding: 8.8% 6.9% 4.6% 6.9%;
         display: block;
-        padding-top: 176px; 
+        padding-top: 9.8%; 
         padding-bottom: 2rem;
+        h2 {
+            margin: 0;
+            padding: 0;
+            margin-left: 9.1%;
+            font-size: $FontSizeL; 
+        }
+        .podcast-container {
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; 
+            iframe {
+                margin: 1.2%;
+                width: 44.9%;
+            }
+          }
     }
-    .episodes h2 {
-        margin: 0;
-        padding: 0;
-        margin-left: 13.9%;
-        font-size: $FontSizeL; 
+    .us {
+        padding: 0 12.8% 1.6% 16.8%;
+        
+        .us-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            img {
+                margin-right: 4.3%;
+                width: 45%;
+                transform: translateY(-27px);
+            }
+            .text-container {
+                margin: 0;
+                padding: 0;
+                h2 {
+                    font-size: $FontSizeL;
+                    margin-bottom: 24px; 
+                }
+                p {
+                    line-height: 24px;
+                    font-size: $FontSizeMedium;
+                    font-weight: 400;
+                    width: 94%;
+                }
+            }
+        }
     }
-    .episodes .podcast-container {
-        padding: 0;
-        margin: 26px 6.9%;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap; 
-      }
-    .episodes .podcast-container iframe {
-        margin: 0;
-        max-width: 47.6%;
-        max-height: 5.9%;
-        padding-bottom: 1.8%; 
-    }
-    .us .us-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center; 
-    }
-    .us .us-container img {
-        margin-right: 0;
-        width: 31.8%;
-        transform: translateY(-17px);
-        margin-left: 13.9%; 
-    }
-    .us .us-container .text-container {
-        margin: 0;
-        padding: 0;
-        max-width: 32%;
-        margin-right: 17.8%; 
-    }
-    .us .us-container .text-container h2 {
-        width: 100%;
-        font-size: $FontSizeL;
-        margin-bottom: 24px; 
-    }
-    .us .us-container .text-container p {
-        line-height: 24px;
-        font-size: $FontSizeMedium;
-        font-weight: 400;
-    }
-    .interviews h2 {
-        padding: 0;
-        font-size: $FontSizeL;
-        margin-left: 13.9%;
-        margin-bottom: 36px; 
-    }
-    .interviews .galery {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap; 
-    }
-    .interviews .galery img {
-        width: calc(100%/3);
-        height: 100%;
+    .interviews {
+        h2 {
+            padding: 1.6% 0 0;
+            font-size: $FontSizeL;
+            margin-left: 13.9%;
+            margin-bottom: 36px; 
+        }
+        .galery {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap; 
+            img {
+                width: calc(100%/3);
+                height: 100%;
+            }
+        }
     }
     .topics {
-        padding: 0; 
-    }
-    .topics h2 {
-        margin-left: 13.9%;
-        font-size: $FontSizeL;
-        margin-top: 64px; 
-    }
-    .topics .topics-container{
-        margin: 56px 15.3% 34px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between; 
-    }
-    .topics .topics-container figure {
-        margin: 0; 
-    }
-    .topics .topics-container figure figcaption{
-        max-width: 220px; 
+        padding: 0;
+        h2 {
+            margin-left: 13.9%;
+            font-size: $FontSizeL;
+            margin-top: 2.6%;
+        }
+        .topics-container {
+            margin: 3.8% 16.3% 1%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            figure {
+                margin: 0;
+                figcaption {
+                    max-width: 220px; 
+                }
+            }
+        }
     }
     .news {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 518px;
-        overflow: hidden; 
-    }
-    .news .parallelogram-background {
-        height: 800px; 
-    }
-    .news h2 {
-        font-size: $FontSizeL; 
-    }
-    .news a {
-        font-size: 18px;
-        padding: 16px 4.1%; 
-    }
-    .news .boton:hover {
-        color: white;
-        background-image: linear-gradient(to left, $btnGradient); 
+        padding: 5.4% 20% 6.2%;
+        .parallelogram-background {
+            height: 800px; 
+        }
+        h2 {
+            font-size: $FontSizeL;
+            line-height: 62px;
+        }
+        a {
+            font-size: 18px;
+            padding: 16px 4.1%; 
+        }
+        .btn {
+            width: 24%;
+        }
+        .btn:hover {
+            color: white;
+            background-image: linear-gradient(to left, $btnGradient);
+        }
     }
     footer {
         display: flex;
         align-items: center;
         justify-content: space-between;
         flex-direction: row; 
-    }
-    footer p {
-        margin: 0;
-        padding: 0;
-        margin-left: 6.9%;
-        margin-right: 6.9%;
-        font-size: 18px;
-        color:$primaryFontColor;
-        font-weight: 500; 
-        line-height: 28px;
-    }
-    footer .socialmedia-container {
-        margin-right: 6.9%; 
-    }
-    footer .socialmedia-container i {
-        margin-right: 1.2rem; 
-        font-size: 18px;
+        p {
+            padding: 0;
+            margin-left: 6.9%;
+            font-size: $FontSizeMedium;
+            color:$primaryFontColor;
+            font-weight: 500; 
+            line-height: 28px;
+        }
+        .socialmedia-container {
+            margin: 0.8% 6.9% 0.9% 0; 
+            i {
+                margin-left: 2.86rem;
+                font-size: 18px;
+            }
+        }
     }
 }
     
