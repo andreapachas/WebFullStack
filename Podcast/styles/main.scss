@@ -232,13 +232,13 @@ nav .btn-nav .fa-times{
     font-weight: 100;
     margin-bottom: 2rem;
 }
-.topics .topics-container div{
+.topics .topics-container figure{
     display: flex;
     flex-direction: column;
     align-self: flex-start;
     margin: 49px 0;
 }
-.topics .topics-container div h3{
+.topics .topics-container figure figcaption{
     margin-top: 13px;
     font-family:$FontFamily;
     font-size: 24px;
@@ -470,10 +470,10 @@ footer .socialmedia-container i{
         flex-direction: row;
         justify-content: space-between; 
     }
-    .topics .topics-container div {
+    .topics .topics-container figure {
         margin: 0; 
     }
-    .topics .topics-container div h3 {
+    .topics .topics-container figure figcaption{
         max-width: 220px; 
     }
     .news {
