@@ -3,7 +3,7 @@
   padding: 0px;
   margin: 0px;
   border: 0px;
-  color: #060a24;
+  color: rgba(6, 10, 36, 0.56);
 }
 
 ul {
@@ -237,7 +237,7 @@ header nav .btn-nav .fa-times {
   margin-top: 13px;
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 24px;
-  color: #060a24;
+  color: rgba(6, 10, 36, 0.56);
   letter-spacing: 0;
   text-align: center;
 }
@@ -286,7 +286,7 @@ footer p {
   padding-top: 24px;
   text-align: center;
   font-size: 14px;
-  color: #060a24;
+  color: rgba(6, 10, 36, 0.56);
   letter-spacing: 0;
   line-height: 22px;
 }
@@ -338,7 +338,7 @@ footer .socialmedia-container i {
   }
   header nav .nav-options li a {
     font-size: 16px;
-    color: #060a24;
+    color: rgba(6, 10, 36, 0.56);
     letter-spacing: 0;
     line-height: 28px;
   }
@@ -348,7 +348,11 @@ footer .socialmedia-container i {
   }
   header nav .nav-options li a:active {
     text-decoration: line-through;
-    color: #060a24 56%;
+    color: rgba(6, 10, 36, 0.56) 56%;
+  }
+  header nav .nav-options li a:active {
+    text-decoration: line-through;
+    color: rgba(6, 10, 36, 0.56) 56%;
   }
 
   .landing-page {
@@ -511,7 +515,7 @@ footer .socialmedia-container i {
     padding: 0;
     margin-left: 6.9%;
     font-size: 16px;
-    color: #060a24;
+    color: rgba(6, 10, 36, 0.56);
     font-weight: 500;
     line-height: 28px;
   }

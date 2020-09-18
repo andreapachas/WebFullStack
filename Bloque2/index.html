@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Ejemplo
+        /* const number1 = + prompt("Ingresa numero 1")
+        const number2 = + prompt("Ingresa numero 1")
+        alert(number1+number2) */
+
+        //ejercicio 1
+        /* const km = + prompt("Ingresa cantidad de kilometros a recorrer")
+        const capacidadTanque= 45
+        const kmxLitro=15
+        if( km <= capacidadTanque * kmxLitro){
+            alert("Si llegarás")
+        }
+        else{
+            alert("Debera abastecer")
+        } */
+        //ejercicio 2
+        /* const modelo = + prompt("Ingresa el modelo del motor")
+        let kmxLitro
+        if(modelo == 1.6){
+            kmxLitro = 15
+        } else if (modelo == 1.8){
+            kmxLitro = 12
+        }else{
+            kmxLitro = 10
+        }
+        const km = + prompt("Ingresa cantidad de kilometros a recorrer")
+        const capacidadTanque= 50
+        if( km <= capacidadTanque * kmxLitro){
+            alert("Si llegarás con " + parseFloat(km / (capacidadTanque * kmxLitro)).toFixed(2) + " tanques de nafta")
+        }
+        else{
+            alert("Debera abastecer " + parseFloat(km / (capacidadTanque * kmxLitro)).toFixed(2) + " tanques de nafta")
+        } */
+        //ejercicio 3
+        /* const dial = + prompt("Ingresa el dial de radio que quiere sintonizar")
+        if(dial < 107.9 && dial >= 89.9 && dial % 2 != 0){
+            alert("Tu emisora existe!")
+        }else{
+            alert("No existe tu emisora :( ")
+        } */
+        //ejercicio 4
+        /* const dinero = + prompt("Ingrese monto a transferir")
+        const usuarioDestino = prompt("Ingrese usuario a quien desea transferir")
+        const usuarios = ["Marcos","Andrea","Carlos"]
+        const fondos = 1500
+        if(dinero <= fondos && (usuarios.includes(usuarioDestino))){
+            alert("Transacción exitosa!")
+        }
+        else{
+            alert("No se pudo T-T")
+        } */
+        let zero
+        let caracteres = []
+        let caracter
+        do {
+            let caracter = prompt("Enter a caracter")
+            if (caracter !== null){
+                caracteres = caracteres.concat(caracter)
+                zero = true
+            } else{
+                zero = false
+            }
+            
+        } while (zero);
+    </script>
+</body>
+</html>
+
+

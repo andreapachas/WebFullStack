@@ -6,7 +6,7 @@ $FontSizeSmall: 14px;
 $primaryColor: #FFFFFF;
 $secondaryColor: #0000FF;
 $gradientParallelogram: #0000A3;
-$primaryFontColor: #060a24;
+$primaryFontColor: rgba(6,10,36,0.56);
 $secondaryFontColor: #FFFFFF;
 $navResponsiveColor: #0000EC;
 $decorationNavColor: #00F3BB;
@@ -345,6 +345,10 @@ footer {
                     a:hover {
                         color:$decorationNavColor;
                         text-decoration: line-through; 
+                    }
+                    a:active {
+                        text-decoration: line-through;
+                        color: $primaryFontColor 56%;
                     }
                     a:active {
                         text-decoration: line-through;
