@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(a());
+
+        try {
+            console.log(b());
+        } catch (reason) {
+            console.log(reason);
+        } finally {
+            console.log('after try catch')
+        }
+
+        try {
+            throw 'Custom Error';
+        } catch (reason) {
+            console.log(reason);
+        } finally {
+            console.log('after try catch')
+        }
+
+        try {
+            a();
+        } catch (reason) {
+            console.log(reason);
+        } finally {
+            console.log('after try catch')
+        }
+
+        function a() {
+            console.log(this)
+            return 1
+        }
+        const b = function () { return 1 };
+
+        console.log(b())
+        console.log(a())
+        console.log((function () { return 1 })())
+
+        const c = (a, b, c) => {
+            console.log(this)
+            return 5
+        }
+
+        const d = (a, b, c) => 5;
+
+        console.log(c())
+        console.log(d())
+        const obj = {
+            a,
+            b,
+            c,
+            d,
+            abc: ''
+        }
+
+        console.log(obj)
+        console.log(obj.a())
+        console.log(obj.c())
+
+        const accumulator = (accum, item) => accum + item
+
+        const sum = numbers => numbers.reduce(accumulator, 0)
+        const logItems = list => list.forEach(console.log)
+    </script>
+</body>
+</html>

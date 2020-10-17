@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        class Persona {
+            #name = 'default';
+            #age;
+            lastname = 'default lastname';
+            #testResults = [2, 5, 7];
+
+            constructor(name, lastname, age) {
+                this.#name = name;
+                this.lastname = lastname;
+                this.#age = age;
+            }
+            get score() {
+                return this.#testResults.reduce((out, item) => out + item, 0) / this.#testResults.length
+            }
+            set score(asd) {
+                console.log('can\'t set score')
+            }
+
+            get name() {
+                return this.#name.toUpperCase();
+            }
+            set name(newValue) {
+                this.#name = newValue.toLowerCase();
+                console.log(this.introduction())
+            }
+
+            introduction() {
+                console.log(`Hi, I'm ${this.#name}`);
+                console.log("Hi, I'm " + this.#name);
+            }
+            static blah() {
+                console.log('static')
+            }
+        }
+        const person = new Persona('Matias', 'Olguin', 31);
+        console.log(person);
+        console.log(person.name);
+        console.log(person.lastname);
+        console.log(person.introduction());
+        console.log(Persona.blah());
+        person.name = 'SDFGSDFGSDF';
+        console.log(person);
+        console.log(person.name);
+        console.log(person.score);
+        person.score = 345;
+        console.log(person);
+        console.log(person.score);
+        person.height = 180;
+        console.log(person);
+        console.log(Persona);
+
+        // Factory:
+        
+        const mentor = getPersona('Matias');
+        console.log(mentor);
+
+        function getPersona(initialName = 'default', age = 20) {
+            console.log('getting persona')
+            let name = initialName;
+            const testResults = [2, 5, 7];
+            return {
+                lastname: 'default lastname',
+                age: age,
+                get score() {
+                    return testResults.reduce((out, item) => out + item, 0) / testResults.length
+                },
+                set score(asd) {
+                    console.log('can\'t set score')
+                },
+                get name() {
+                    return name.toUpperCase();
+                },
+                set name(newValue) {
+                    name = newValue.toLowerCase();
+                    console.log(this.introduction())
+                },
+                introduction() {
+                    console.log(`Hi, I'm ${name}`);
+                    console.log("Hi, I'm " + name);
+                }
+            }
+        }
+
+        function getTestResult(score = 0, date = null) {
+            return {
+                score,
+                date,
+                log(x) {
+                    console.log(x)
+                }
+            }
+        }
+
+        const testResult = getTestResult(10, new Date());
+        console.log(testResult);
+        console.log(testResult.log('equis'));
+
+        //ToDo: Research Object.create()
+
+        const testResult2 = {
+            score: 10,
+            date: new Date(),
+            log(x) {
+                console.log(x)
+            }
+        };
+
+        console.log(testResult2)
+        
+        console.log(Object.assign({}, person, testResult))
+    </script>
+</body>
+</html>

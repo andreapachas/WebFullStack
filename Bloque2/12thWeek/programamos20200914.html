@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person {
+            // name;
+            // lastName;
+            // age;
+            constructor(name, lastName, age) {
+                this.name = name;
+                this.lastName = lastName;
+                this.age = age;
+            }
+            get fullName() {
+                return `${this.name} ${this.lastName}`;
+            }
+            get isAdult() {
+                return this.age >= 18;
+            }
+        }
+        const person = new Person(prompt('Ingrese nombre'), prompt('Ingrese apellido'), +prompt('Ingrese edad'));
+        console.log(person);
+        console.log(person.fullName);
+        console.log(person.isAdult);
+
+        const person2 = {
+            name: prompt('Ingrese nombre'),
+            lastName: prompt('Ingrese apellido'),
+            age: +prompt('Ingrese edad'),
+            fullName: function() {
+                return `${this.name} ${this.lastName}`;
+            },
+            isAdult: function() {
+                return this.age >= 18;
+            }
+        };
+        console.log(person2);
+        console.log(person2.fullName());
+        console.log(person2.isAdult());
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            background: blue;
+        }
+        .white {
+            color: white;
+        }
+        .red {
+            background: red;
+        }
+        .round {
+            padding: 32px;
+            border-radius: 50%;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <a id="apply" class="white">Apply</a>
+    <div id="container">CONTENEDOR</div>
+    <script>
+        const apply = document.getElementById('apply');
+        const container = document.getElementById('container');
+        apply.addEventListener('click', () => {
+            console.log(container);
+            //container.classList.toggle('white');
+            const value = document.querySelector('input').value;
+            console.log(value);
+            const resultValue = value.split('+').reduce((o,i)=>o + +i,0);
+
+            const previousResults = JSON.parse(localStorage.getItem('demoResultValues')) || [];
+            console.log(previousResults, localStorage.getItem('demoResultValues'))
+
+            const newResults = previousResults.concat(resultValue)
+            localStorage.setItem('demoResultValues', JSON.stringify(newResults));
+
+            renderResults();
+        });
+        renderResults();
+        function renderResults() {
+            const previousResults = JSON.parse(localStorage.getItem('demoResultValues')) || [];
+            container.innerHTML = '';
+            previousResults.forEach(result => {
+                const resultElement = document.createElement('p');
+                resultElement.innerText = result;
+                resultElement.className = 'round white';
+                // resultElement.style.padding = '32px';
+                // resultElement.style.borderRadius = '50%';
+                // resultElement.style.background = 'green';
+                container.insertBefore(resultElement, container.firstChild);
+            })
+        }
+    </script>
+</body>
+</html>

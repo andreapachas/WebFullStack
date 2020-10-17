@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>echo()</script>
+    <script>
+        function startExecution() {
+            function echo(x, y, z) {
+                console.log(x, y, z);
+            }
+
+            for(let i = 0; i < 10; i++) {
+                echo('for', i, 1, 2, 3);
+            }
+
+            let i = 10;
+            while(i--) {
+                echo('while', i);
+                switch(i) {
+                    case 3:
+                    case 5:
+                        console.log('3 or 5');
+                        break;
+                    case 8:
+                        console.log('8');
+                        break;
+                    default:
+                        console.log('default');
+                }
+            }
+        }
+        startExecution();
+    </script>
+</body>
+</html>

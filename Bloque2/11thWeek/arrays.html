@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const fruits = ['banana', 'apple', 'orange'];
+        console.log(fruits[2])
+        console.log(fruits)
+
+        fruits.push('kiwi')
+        console.log(fruits)
+
+        console.log(fruits.pop())
+        console.log(fruits)
+
+        console.log(fruits.shift())
+        console.log(fruits)
+
+        fruits.unshift('kiwi')
+        console.log(fruits)
+
+        console.log(fruits.splice(1, 2, 'banana', 'watermelon'))
+        console.log(fruits)
+        fruits.sort()
+        console.log(fruits)
+
+        console.log(fruits.reverse())
+        console.log(fruits)
+
+        console.log(fruits.length)
+        console.log(fruits.join(';'))
+        console.log(fruits)
+        const fruitList = fruits.join(';')
+        console.log(fruitList.split(';'))
+
+        console.log('1x2x3x4x5x6'.split('x'))
+        console.log('JKHSDFHJKSDFKHJSDF'.split(''))
+
+        console.log([1,2,3,4,5,'string',true].join(' '))
+
+        console.log([1,4,2,3,4,5,'string',true].indexOf(4))
+        console.log([1,2,3,5,'string',true].indexOf(4))
+
+        const list = [1,4,2,3,4,5,'string',true]
+        console.log(list.slice(2, -1))
+        console.log(list.slice(2))
+        console.log(list.slice(-2))
+        console.log(list.slice(1, 3))
+        console.log(list.slice())
+
+        console.log(fruits)
+        const list2 = fruits.slice().sort()
+        console.log(list2)
+        console.log(fruits)
+
+        console.log(list.concat(false))
+        console.log(list.concat(list2))
+        console.log(list2.concat(list))
+
+        const vegetables = fruits.concat(list2)
+        console.log(vegetables)
+
+        console.log(vegetables.filter(item => item !== 'banana'))
+        
+        console.log(vegetables.filter((item, index) => index !== 3))
+
+        console.log(vegetables.map(item => item.toUpperCase()))
+        console.log([1,2,3,1,2,3,4].reduce((accum, item) => accum + item, 0))
+
+        vegetables.forEach(item => console.log(item))
+        
+        console.log(vegetables.find(item => item.length < 6))
+
+// ToDo: research .some() .every()
+    </script>
+</body>
+</html>

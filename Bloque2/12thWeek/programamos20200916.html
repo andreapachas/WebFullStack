@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function register() {
+            const users = ['a', 'b'];
+            const name = prompt('Ingrese nombre de usuario');
+            try {
+                if(users.includes(name)) {
+                    throw 'User already exists';
+                } else {
+                    return users.concat(name);
+                }
+            } catch (reason) {
+                alert(reason);
+            }
+        }
+        const result = register();
+        console.log(result);
+        if(result) {
+            alert(`Welcome ${result[result.length - 1]} (${result.slice(-1)})`);
+            console.log(result[result.length - 1], result.slice(-1));
+        }
+    </script>
+</body>
+</html>

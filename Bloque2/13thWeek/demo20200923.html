@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            background: black;
+            display: flex;
+            flex-flow: column;
+            color: white;
+            justify-content: space-between;
+            height: 50vh;
+        }
+        span {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <span id="button1">button 1</span>
+        <span id="button2">button 2</span>
+        <span >button 2</span>
+        <span >button 2</span>
+        <span >button 2</span>
+        <p>paragraph</p>
+    </div>
+    <script>
+        const container = document.getElementById('container');
+        const button1 = document.getElementById('button1');
+        const button2 = document.getElementById('button2');
+        // console.log(container.querySelector('span:nth-child(2n), p'))
+        container.addEventListener('click', console.log);
+        container.addEventListener('click', event => { console.log(event.target); container.removeEventListener('click', console.log) });
+        button1.addEventListener('click', event => console.log(event, event.target, 'from button'));
+        button2.addEventListener('click', event => { console.log(event, event.target, 'from button'); event.stopPropagation(); });
+
+    </script>
+</body>
+</html>
