@@ -2,8 +2,8 @@
 Complete Course
 ## Bloque 1
 ### Desarrollo web (conceptos fundamentales para entender qué hacemos cuando programamos) : 
-Entorno
-Internet
+- Entorno
+- Internet
 Web
 Cliente - Servidor
 Front-end
