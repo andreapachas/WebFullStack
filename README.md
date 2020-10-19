@@ -51,3 +51,39 @@ Complete Course
 - Recursos externos (Google Fonts, FontAwesome)
 - Framework y librerías (Bootstrap)
 - Pre-procesadores (SASS).
+
+## Bloque 2
+### Fundamentos: 
+- Orígenes de la programación
+- Lenguajes de programación
+- Herramientas de desarrollo 
+- Debugging
+- Datos
+- Variables
+- Operadores
+- Arreglos
+- Objetos
+- Lógica
+- Condicionales
+- Bucles
+- Estructura
+- Funciones
+- Clases.
+### DOM + AJAX: 
+- Selección de elementos
+- Selección de grupos de elementos
+- Obtención de datos del DOM
+- Modificación del DOM
+- Modificación del CSSOM
+- Creación dinámica de elementos
+- Manejo de eventos
+- Browser API (localStorage, userMedia)
+- Asincronismo (async, await)
+- Promesas (then, catch)
+- Fetch API
+- Estructura de paquetes HTTP
+- Request methods
+- Status codes
+- JSON
+- CORS
+- Autenticación.
