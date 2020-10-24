@@ -1,6 +1,7 @@
 # WebFullStack
 Complete Course
 ## Bloque 1
+En este bloque, aprenderás a estructurar tu sitio mediante HTML y a aplicar los estilos que desees con CSS.
 ### Desarrollo web (conceptos fundamentales para entender qué hacemos cuando programamos) : 
 - Entorno
 - Internet
@@ -53,6 +54,7 @@ Complete Course
 - Pre-procesadores (SASS).
 
 ## Bloque 2
+En este bloque, aprenderás a capturar cada comportamiento que suceda en tu sitio web, definir acciones y comunicarte con servicios externos.
 ### Fundamentos: 
 - Orígenes de la programación
 - Lenguajes de programación
