@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const promiseList = [
+            Promise.resolve(1),
+            Promise.resolve(2)
+        ];
+        Promise.all(promiseList)
+            .then(resolveValues => {
+                console.table(resolveValues);
+            }).catch(reason => {
+                console.log(reason);
+            });
+
+        const promiseList2 = [
+            Promise.resolve(1),
+            new Promise((resolve, reject) =>
+                setTimeout(() => reject('x'), 1)),
+            Promise.resolve(2),
+            Promise.reject('y')
+        ];
+        Promise.all(promiseList2)
+            .then(resolveValues => {
+                console.table(resolveValues);
+            }).catch(reason => {
+                console.log(reason);
+            });
+
+        const promiseList3 = [
+            new Promise((resolve, reject) =>
+                setTimeout(() => reject('8'), 8)),
+            new Promise((resolve, reject) =>
+                setTimeout(() => reject('4'), 4)),
+            new Promise((resolve, reject) =>
+                setTimeout(() => reject('16'), 16)),
+        ];
+
+        Promise.race(promiseList3)
+            .then(value => console.log(value))
+            .catch(reason => console.log(reason));
+
+        const promiseList4 = [
+            new Promise((resolve, reject) =>
+                setTimeout(() => reject('8'), 8)),
+            new Promise((resolve, reject) =>
+                setTimeout(() => resolve('4'), 4)),
+            new Promise((resolve, reject) =>
+                setTimeout(() => reject('16'), 16)),
+        ];
+        Promise.race(promiseList4)
+            .then(value => console.log(value))
+            .catch(reason => console.log(reason));
+    </script>
+</body>
+</html>

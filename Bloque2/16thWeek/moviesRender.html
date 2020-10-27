@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .results{
+            display: flex;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+            text-align: center;
+            align-items: center;
+        }
+        .figure{
+            width: auto;
+            height: auto;
+        }
+        .result img {
+            width: 260px;
+            height: 400px;
+            margin: 8.95% 10px 0 11.5%;
+        }
+        li{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <form id="search">
+        <input id="title" type="text"/>
+    </form>
+    <ul id="list" class="results">
+    </ul>
+    <script>
+        const list = document.getElementById('list');
+        const form = document.getElementById('search');
+        const input = document.getElementById('title');
+
+        form.addEventListener('submit', showResult);
+
+        const getUrl = title => {
+            const key = '7fb789f2';
+            return `http://www.omdbapi.com/?apikey=${key}&s=${title}`;
+        }
+
+        async function showResult(event) {
+            event.preventDefault();
+            const url = getUrl(input.value);
+            const response = await fetch(url);
+            const results = await response.json();
+            console.log(results);
+            if(results.Response === 'True')
+                results.Search.forEach(renderResult);
+            else alert('not found');
+        }
+
+        function renderResult(result) {
+            const li = document.createElement('li');
+            const figure = document.createElement('figure');
+            const img = document.createElement('img');
+            const figcaption = document.createElement('figcaption');
+            const plot = document.createElement('p');
+
+            li.className = 'result';
+            img.src = result.Poster;
+            img.alt = result.Title;
+            figcaption.textContent = result.Title;
+            plot.textContent = result.Plot;
+
+            figure.appendChild(img);
+            figure.appendChild(figcaption);
+            li.appendChild(figure);
+            li.appendChild(plot);
+            list.appendChild(li);
+        }
+    </script>
+</body>
+</html>

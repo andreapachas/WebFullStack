@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getUserUrl(user) {
+            return `https://api.github.com/users/${user}`;
+        }
+
+        function getFollowers(user) {
+            const url = getUserUrl(user);
+            console.log(url);
+            fetch(url)
+                .then(response => response.json())
+                .then(user => fetch(user.followers_url))
+                .then(response => response.json())
+                .then(followers => followers.forEach(renderFollower));
+        }
+
+        function renderFollower(follower) {
+            const p = document.createElement('p');
+            p.textContent = follower.login;
+
+            document.body.appendChild(p);
+        }
+
+        getFollowers('AJVelezRueda');
+    </script>
+</body>
+</html>

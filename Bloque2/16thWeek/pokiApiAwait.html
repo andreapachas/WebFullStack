@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list" class="results">
+    </ul>
+    <script>
+        const list = document.getElementById('list');
+        const getResults = () => {
+            const ids = [66, 46, 72];
+            const getUrl = id => `https://pokeapi.co/api/v2/pokemon/${id}`;
+            const urls = ids.map(getUrl);
+            const promises = urls.map(
+                async url => {
+                    try {
+                        const response = await fetch(url);
+                        const data = await response.json();
+                        console.log(data);
+                        return data;
+                    } catch(reason) {
+                        console.log(reason);
+                        return reason;
+                    }
+                }
+            );
+            // const promises2 = 
+            //     [66, 46, 72]
+            //         .map(getUrl)
+            //         .map(url => fetch(url).then(response => response.json()));
+            console.log(promises);
+            return Promise.all(promises);
+        }
+        showResults();
+
+        async function showResults() {
+            // getResults().then(results => {
+            //     console.log(results);
+            //     results.forEach(renderResult);
+            // })
+            const results = await getResults();
+            console.log(results);
+            results.forEach(renderResult);
+        }
+
+        function renderResult(result) {
+        // function renderResult({ name, sprites: { front_default } }) {
+            const li = document.createElement('li');
+            const figure = document.createElement('figure');
+            const img = document.createElement('img');
+            const figcaption = document.createElement('figcaption');
+
+            li.className = 'result';
+            // img.src = front_default;
+            // img.alt = name;
+            img.src = result.sprites.front_default;
+            img.alt = result.name;
+            figcaption.textContent = result.name;
+
+            figure.appendChild(img);
+            figure.appendChild(figcaption);
+            li.appendChild(figure);
+            list.appendChild(li);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles/dist/main.css" />
+    <link rel="shortcut icon" href="images/logo-desktop.svg" />
+    <title>Gifos</title>
+  </head>
+  <body>
+    <div id="openModal" class="modalDialog">
+      <div id="containerOpenModal" class="containerOpenModal modal-white-mode">
+        <a href="#close" title="Close" class="closeModal close"
+          ><img src="images/close.svg" alt="Close Modal"
+        /></a>
+        <img
+          class="buttonSliderLeft white-mode-slider-left"
+          src="images/button-slider-left.svg"
+          alt="Button Left"
+        />
+        <img
+          class="buttonSliderRight white-mode-slider-right"
+          src="images/Button-Slider-right.svg"
+          alt="Button Rights"
+        />
+      </div>
+    </div>
+    <header>
+        <nav>
+            <img class="logo" src="images/logo-desktop.svg" alt="Imagen del logo de la pagina">
+            <input id="navbar" class="navbar" type="checkbox" />
+            <label class="btn-nav" for="navbar">
+                <i class="fa fa-bars"></i>
+                <i class="fa fa-times"></i>
+            </label>
+            <ul class="nav-options">
+                <li><a href="#">Modo Nocturno</a></li>
+                <li><a href="#favorites">Favoritos</a></li>
+                <li><a href="#mygifos">Mis GIFOS</a></li>
+                <li><img class="crearGifos" id="crearGifos" src="images/button-crear-gifo.svg" alt="Crear gifos"/></li>
+            </ul>
+        </nav>
+    </header>
+   
+    <section class="searching-page">
+      <h1> Inspírate, busca, guarda, y crea los mejores <s>GIFOS</s></h1>
+      <figure>
+        <img src="images/ilustra_header.svg" alt="Imagen de amigos"/>
+      </figure>
+      <form class="searchBar">
+        <input id="inputSearch" type="text" placeholder="Busca GIFOS y más" autocomplete="off"/>
+        <img class="iconSearch" src="images/icon-search.svg" alt="Icono de Lupa para busqueda"/>
+        <img class="iconClose" src="images/close.svg" alt="Icono para borrar o corregir busqueda"/>
+      </form>
+      <p class="trending">Trending:</p>
+      <div class="containerTrendingP">
+        <p>Reactions, Entertainment, Sports, Stickers, Artists</p>
+      </div>
+      <div class="resultsGifos results" id="resultsGifos">
+        <h2 id="titleCategorySearch"></h2>
+        <div class="contentResultsGifos contentResults"></div>
+      </div>
+      <button class="btn" id="MoreGifs">VER MÁS</button>
+    </section>
+
+    <section class="favorites results" id="favorites">
+      <img src="images/icon-favoritos.svg" alt="Icono de corazon inicio de sección Gifos Favoritos" />
+      <h2 class="title">Favoritos</h2>
+      <div class="containerFavorites contentResults" id="containerFavorites"></div>
+      <button class="btn" id="moreFavorites"> VER MÁS</button>
+      <div id="notFoundFavorites" class="notFound">
+        <img src="images/icon-fav-sin-contenido.svg" alt="No se encontraron Gifos favoritos"/>
+        <p>"¡Guarda tu primer GIFO en Favoritos para que se muestre aquí!"</p>
+      </div>
+    </section>
+
+    <section class="myGifos results" id="mygifos">
+      <img src="images/icon-mis-gifos.svg" alt="Icono de carita feliz inicio de sección Mis Gifos" />
+      <h2 class="title">Mis Gifos</h2>
+      <div class="containerMyGifos contentResults" id="containerMyGifos"></div>
+      <button class="btn" id="moreMyGifos">VER MÁS</button>
+      <div id="notFoundMyGifos" class="notFound">
+        <img src="images/icon-mis-gifos-sin-contenido.svg" alt="No se encontraron Gifos" />
+        <p>¡Animate a crear tu primer GIFO!</p>
+      </div>
+    </section>
+
+    <section id="trendingGifos" class="trendingGifos">
+      <h2>Trending GIFOS</h2>
+      <div>
+        <p class="title subtitleTrending">Mira los últimos GIFOS de nuestra comunidad.</p>
+      </div>
+    </section>
+    <section class="containerImgGifos">
+      <img class="buttonSliderLeft retrocederSliderTrending white-mode-slider-left" src="images/button-slider-left.svg" alt="Button Left"/>
+      <img class="buttonSliderRight avanzarSliderTrending white-mode-slider-right" src="images/Button-Slider-right.svg" alt="Button Rights"/>
+    </section>
+    <footer class="containerFooter">
+      <div class="containerSocialMediaIcons">
+        <p>Compartir en:</p>
+        <div>
+          <a href="https://www.facebook.com">
+            <img class="facebook" src="images/icon_facebook.svg" onmouseover="this.src='images/icon_facebook_hover.svg'" onmouseout="this.src='images/icon_facebook.svg'" alt="Facebook"/>
+          </a>
+          <a href="https://www.twitter.com">
+            <img class="twitter" src="images/icon-twitter.svg" onmouseover="this.src='images/icon-twitter-hover.svg'" onmouseout="this.src='images/icon-twitter.svg'" alt="Twitter"/>
+          </a>
+          <a href="https://www.instagram.com">
+            <img class="instagram" src="images/icon_instagram.svg" onmouseover="this.src='images/icon_instagram-hover.svg'" onmouseout="this.src='images/icon_instagram.svg'" alt="Instagram"/>
+          </a>
+        </div>
+      </div>
+      <p class="footerGifosAll">
+        @ GIFOS 2020 All Rights Reserved.
+      </p>
+    </footer>
+
+    <!-- <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/funcionesGenerales.js"></script> -->
+  </body>
+</html>

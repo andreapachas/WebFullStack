@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list" class="results">
+    </ul>
+    <script>
+        const key = 'Nc8u10QS9qz9vLVNpc7W08yiQVxITRYJ'
+        function getRandomUrl() {
+            return `https://api.giphy.com/v1/gifs/random?api_key=${key}`
+        }
+        function getSearchUrl(query) {
+            return `https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${query}`
+        }
+        const url = getRandomUrl();
+        const searchUrl = getSearchUrl('cat');
+        fetch(searchUrl)
+            .then(response => response.json())
+            .then(console.log);
+
+        fetch(url)
+            .then(response => response.json())
+            .then(convertGif)
+            .then(renderResult);
+
+        function convertGif(item) {
+            return {
+                title: item.data.title,
+                url: item.data.images.original.url
+            }
+        }
+        function renderResult(result) {
+            const li = document.createElement('li');
+            const figure = document.createElement('figure');
+            const img = document.createElement('img');
+            const figcaption = document.createElement('figcaption');
+
+            li.className = 'result';
+            img.src = result.url;
+            img.alt = result.title;
+            figcaption.textContent = result.title;
+
+            figure.appendChild(img);
+            figure.appendChild(figcaption);
+            li.appendChild(figure);
+            list.appendChild(li);
+        }
+    </script>
+</body>
+</html>
