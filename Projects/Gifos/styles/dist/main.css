@@ -47,7 +47,7 @@ header nav .btn-nav .fa-times {
   font-size: 18px;
   display: none;
 }
-@media (max-width: 952px) {
+@media (max-width: 900px) {
   header .nav-options {
     display: none;
     box-sizing: border-box;
@@ -154,7 +154,7 @@ header nav .btn-nav .fa-times {
 .searching-page figure {
   width: 273px;
   height: 130px;
-  margin: 0 13.6% 0px 13.6%;
+  margin: 0 13.6% -2px 13.6%;
 }
 .searching-page figure img {
   max-width: 100%;
@@ -165,27 +165,26 @@ header nav .btn-nav .fa-times {
   line-height: 25px;
   text-align: center;
 }
-.searching-page .containerTrendingP {
-  position: relative;
-  padding: 22px 14% 0 14%;
-  display: flex;
-  flex-direction: column;
+.searching-page .containerTrending {
+  padding: 22px 5% 45px 5%;
   align-items: center;
-  overflow: hidden;
-}
-.searching-page .containerTrendingP p {
-  font-size: 14px;
-  font-weight: 400;
-  text-transform: lowercase;
-  cursor: pointer;
+  align-items: center;
   text-align: center;
-  line-height: 25px;
   width: 80%;
 }
-.searching-page .containerTrendingP p::first-letter {
+.searching-page .containerTrending p {
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  display: inline-block;
+  padding-right: 0.5em;
+  align-content: center;
+}
+.searching-page .containerTrending p::first-letter {
   text-transform: uppercase;
 }
-.searching-page .containerTrendingP p:after {
+
+.resulGifos::before {
   content: "";
   text-align: center;
   display: block;
@@ -313,7 +312,7 @@ header nav .btn-nav .fa-times {
   margin-bottom: 23px;
 }
 
-@media (min-width: 952px) {
+@media (min-width: 900px) {
   * {
     margin: 0;
     padding: 0;
@@ -372,16 +371,21 @@ header nav .btn-nav .fa-times {
     text-align: center;
   }
   header nav .nav-options li .crearGifos:hover {
-    background-image: url(../../images/CTA-crear-gifo-hover.svg);
+    fill: invert(18%) sepia(69%) saturate(7483%) hue-rotate(255deg) brightness(92%) contrast(95%);
   }
   header nav .nav-options li .crearGifos:active {
-    background-image: url(../../images/CTA-crear-gifo-active.svg);
+    fill: invert(37%) sepia(63%) saturate(1879%) hue-rotate(321deg) brightness(90%) contrast(89%);
   }
 
   .searching-page h1 {
     margin: 76px 0 24px 0;
-    width: 60%;
+    width: 45%;
     font-size: 35px;
+    line-height: 50px;
+  }
+  .searching-page figure {
+    width: 399px;
+    height: 190px;
   }
   .searching-page input {
     margin-bottom: 73px;
@@ -397,11 +401,14 @@ header nav .btn-nav .fa-times {
   .searching-page .trending {
     font-size: 18px;
   }
-  .searching-page .containerTrendingP p {
-    font-size: 16px;
-    width: 100%;
+  .searching-page .containerTrending {
+    padding-bottom: 95px;
   }
-  .searching-page .containerTrendingP p:after {
+  .searching-page .containerTrending p {
+    font-size: 16px;
+    width: auto;
+  }
+  .searching-page .containerTrending p:after {
     width: 338px;
     margin: 74px auto;
   }

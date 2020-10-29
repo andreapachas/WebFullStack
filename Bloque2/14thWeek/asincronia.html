@@ -69,7 +69,13 @@
         const list = document.getElementById('list');
         const searchText = document.getElementById('input');
         const showMore = document.getElementById('show-more');
-        const getResults = offset => [{"url":"https://media3.giphy.com/media/BzyTuYCmvSORqs1ABM/giphy.gif?cid=4315affa123gv0bhenfrfpk1sbml3y0km2mqhmi709c0h6gy&rid=giphy.gif","title":"Sci Fi Lol GIF by Hallmark eCards"},{"url":"https://media4.giphy.com/media/MCfhrrNN1goH6/giphy.gif?cid=4315affa123gv0bhenfrfpk1sbml3y0km2mqhmi709c0h6gy&rid=giphy.gif","title":"Cat Ear GIF by swerk"},{"url":"https://media0.giphy.com/media/v6aOjy0Qo1fIA/giphy.gif?cid=4315affa123gv0bhenfrfpk1sbml3y0km2mqhmi709c0h6gy&rid=giphy.gif","title":"bored cat GIF"},{"url":"https://media4.giphy.com/media/13CoXDiaCcCoyk/giphy.gif?cid=4315affa123gv0bhenfrfpk1sbml3y0km2mqhmi709c0h6gy&rid=giphy.gif","title":"funny cat GIF"},{"url":"https://media1.giphy.com/media/xT0GqtpF1NWd9VbstO/giphy.gif?cid=4315affa123gv0bhenfrfpk1sbml3y0km2mqhmi709c0h6gy&rid=giphy.gif","title":"Cat Facepalm GIF"}];
+        const getResults = offset => 
+        [{"url":"https://media3.giphy.com/media/BzyTuYCmvSORqs1ABM/giphy.gif?cid=4315affa123gv0bhenfrfpk1sbml3y0km2mqhmi709c0h6gy&rid=giphy.gif","title":"Sci Fi Lol GIF by Hallmark eCards"},
+        {"url":"https://media4.giphy.com/media/MCfhrrNN1goH6/giphy.gif?cid=4315affa123gv0bhenfrfpk1sbml3y0km2mqhmi709c0h6gy&rid=giphy.gif","title":"Cat Ear GIF by swerk"},
+        {"url":"https://media0.giphy.com/media/v6aOjy0Qo1fIA/giphy.gif?cid=4315affa123gv0bhenfrfpk1sbml3y0km2mqhmi709c0h6gy&rid=giphy.gif","title":"bored cat GIF"},
+        {"url":"https://media4.giphy.com/media/13CoXDiaCcCoyk/giphy.gif?cid=4315affa123gv0bhenfrfpk1sbml3y0km2mqhmi709c0h6gy&rid=giphy.gif","title":"funny cat GIF"},
+        {"url":"https://media1.giphy.com/media/xT0GqtpF1NWd9VbstO/giphy.gif?cid=4315affa123gv0bhenfrfpk1sbml3y0km2mqhmi709c0h6gy&rid=giphy.gif","title":"Cat Facepalm GIF"
+        }];
 
         let offset = 0;
 
@@ -78,6 +84,7 @@
 
         function showResults(event) {
             event.preventDefault();
+            const url = getUrl(searchText.value);
             const results = getResults()
             console.log(results);
             list.innerHTML = '';
@@ -86,7 +93,7 @@
         }
 
         function appendResults(event) {
-            const results = getResults(offset += 12);
+            const results = getResults(offset += 5);
             console.log(results);
             results.forEach(renderResult);
         }

@@ -71,7 +71,7 @@ header {
             }
         }
     }
-    @media (max-width: 952px) {
+    @media (max-width: 900px) {
     .nav-options {
         display: none;
         box-sizing: border-box;
@@ -178,7 +178,7 @@ header {
     figure {
         width: 273px;
         height: 130px;
-        margin: 0 13.6% 0px 13.6%;
+        margin: 0 13.6% -2px 13.6%;
         img {
             max-width: 100%;
         }
@@ -189,35 +189,34 @@ header {
         line-height: 25px;
         text-align: center;
     }
-    .containerTrendingP {
-        position: relative;
-        padding: 22px 14% 0 14%;
-        display: flex;
-        flex-direction: column;
+    .containerTrending {
+        padding: 22px 5% 45px 5%;
         align-items: center;
-        overflow: hidden;
+        align-items: center;
+        text-align: center;
+        width: 80%;
         p {
             font-size: $fontSizeSmall;
             font-weight: 400;
-            text-transform: lowercase;
             cursor: pointer;
-            text-align: center;
-            line-height: 25px;
-            width: 80%; 
+            display: inline-block;
+            padding-right: 0.5em;    
+            align-content: center;
         }
         p::first-letter {
             text-transform: uppercase;
-        }
-        p:after{
-            content: '';
-            text-align: center;
-            display: block;
-            margin: 35px auto;
-            width: 157px;
-            opacity: 0.5;
-            border-bottom: 1px solid $searchFontColorLarge;
+        
         }
     }
+}
+.resulGifos::before{
+    content: '';
+    text-align: center;
+    display: block;
+    margin: 35px auto;
+    width: 157px;
+    opacity: 0.5;
+    border-bottom: 1px solid $searchFontColorLarge;
 }
 .results{
     display: flex;
@@ -326,7 +325,7 @@ header {
     font-family: $secondaryFontFamily;
     margin-bottom: 23px;
 }
-@media (min-width: 952px) {
+@media (min-width: 900px) {
     * {
         margin: 0;
         padding: 0; 
@@ -379,10 +378,10 @@ header {
                         text-align: center;
                     }
                     .crearGifos:hover{
-                        background-image: url(../../images/CTA-crear-gifo-hover.svg)
+                        fill: invert(18%) sepia(69%) saturate(7483%) hue-rotate(255deg) brightness(92%) contrast(95%);
                     }
                     .crearGifos:active{
-                        background-image: url(../../images/CTA-crear-gifo-active.svg)
+                        fill: invert(37%) sepia(63%) saturate(1879%) hue-rotate(321deg) brightness(90%) contrast(89%);
                     }
                 }
             }
@@ -391,8 +390,13 @@ header {
     .searching-page{
         h1{
             margin: 76px 0 24px 0;
-            width: 60%;
+            width: 45%;
             font-size: $fontSizeTitle;
+            line-height: 50px;
+        }
+        figure {
+            width: 399px;
+            height: 190px;
         }
         input{
             margin-bottom: 73px;
@@ -408,10 +412,11 @@ header {
         .trending { 
             font-size: $fontSizeTrending;
         }
-        .containerTrendingP {
+        .containerTrending {
+            padding-bottom: 95px;
             p{
                 font-size: $fontSizeCategory;
-                width: 100%;
+                width: auto;
             }
             p:after{
                 width: 338px;
