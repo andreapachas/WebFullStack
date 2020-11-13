@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Andrea Pachas">
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -13,7 +14,7 @@
     <link rel="shortcut icon" href="images/logo-desktop.svg" />
     <title>Gifos</title>
   </head>
-  <body>
+  <body class="app light">
     <!-- <div id="openModal" class="modalDialog">
       <div id="containerOpenModal" class="containerOpenModal modal-white-mode">
         <a href="#close" title="Close" class="closeModal close"
@@ -40,31 +41,40 @@
                 <i class="fa fa-times"></i>
             </label>
             <ul class="nav-options">
-                <li><a href="#">Modo Nocturno</a></li>
+                <form class="searchBar" id="searchBar2">
+                  <input id="inputSearchNav" type="text" placeholder="Busca GIFOS y más" autocomplete="off"/>
+                  <img class="iconSearch" src="images/icon-search.svg" alt="Icono de Lupa para busqueda"/>
+                  <img class="iconClose" src="images/close.svg" alt="Icono para borrar o corregir busqueda"/>
+                </form>
+                <li type="button" class="buttonChangeTheme"><a href="#" class="theme-name">Modo Nocturno</a></li>
                 <li><a href="#favorites">Favoritos</a></li>
                 <li><a href="#mygifos">Mis GIFOS</a></li>
-                <li><img class="crearGifos" id="crearGifos" src="images/button-crear-gifo.svg" alt="Crear gifos"/></li>
+                <li class="crearGifos">
+                  <svg id="crearGifos" src="images/button-crear-gifo.svg"  width="54" height="54" alt="Crear gifos">
+                    <circle id="Oval-3" stroke="#572EE5" fill="#FFFFFF" fill-rule="nonzero" cx="27" cy="27" r="26.5"></circle>
+                    <path d="M27,19 C27.5522847,19 28,19.4477153 28,20 L28,20 L28,26 L34,26 C34.5128358,26 34.9355072,26.3860402 34.9932723,26.8833789 L35,27 C35,27.5522847 34.5522847,28 34,28 L34,28 L28,28 L28,34 C28,34.5128358 27.6139598,34.9355072 27.1166211,34.9932723 L27,35 C26.4477153,35 26,34.5522847 26,34 L26,34 L26,28 L20,28 C19.4871642,28 19.0644928,27.6139598 19.0067277,27.1166211 L19,27 C19,26.4477153 19.4477153,26 20,26 L20,26 L26,26 L26,20 C26,19.4871642 26.3860402,19.0644928 26.8833789,19.0067277 Z" id="path-1"></path>
+                  </svg>
+                </li>
             </ul>
         </nav>
     </header>
    
     <section class="searching-page">
       <h1> Inspírate, busca, guarda, y crea los mejores <s>GIFOS</s></h1>
-      <figure>
+      <figure class="searchImage">
         <img src="images/ilustra_header.svg" alt="Imagen de amigos"/>
       </figure>
-      <form class="searchBar">
+      <form class="searchBar" id="searchBar1">
         <input id="inputSearch" type="text" placeholder="Busca GIFOS y más" autocomplete="off"/>
         <img class="iconSearch" src="images/icon-search.svg" alt="Icono de Lupa para busqueda"/>
         <img class="iconClose" src="images/close.svg" alt="Icono para borrar o corregir busqueda"/>
       </form>
       <p class="trending">Trending:</p>
       <div class="containerTrending">
-          <!-- <p>Reactions, Entertainment, Sports, Stickers, Artists</p> -->
       </div>
-      <div class="resultsGifos results" id="resultsGifos">
-        <h2 id="titleCategorySearch"></h2>
-        <div class="contentResultsGifos contentResults"></div>
+      <h2 id="titleCategorySearch"></h2>
+      <div class="resultsGifos" id="resultsGifos">
+        <div class="contentResultsGifos contentResults results"></div>
       </div>
       <button class="btn" id="MoreGifs">VER MÁS</button>
     </section>
@@ -96,10 +106,10 @@
       <div>
         <p class="title subtitleTrending">Mira los últimos GIFOS de nuestra comunidad.</p>
       </div>
-    </section>
-    <section class="containerImgGifos">
-      <img class="buttonSliderLeft retrocederSliderTrending white-mode-slider-left" src="images/button-slider-left.svg" alt="Button Left"/>
-      <img class="buttonSliderRight avanzarSliderTrending white-mode-slider-right" src="images/Button-Slider-right.svg" alt="Button Rights"/>
+      <div class="containerImgGifos">
+        <img class="buttonSliderLeft retrocederSliderTrending white-mode-slider-left" src="images/button-slider-left.svg" alt="Button Left"/>
+        <img class="buttonSliderRight avanzarSliderTrending white-mode-slider-right" src="images/Button-Slider-right.svg" alt="Button Rights"/>
+      </div>
     </section>
     <footer class="containerFooter">
       <div class="containerSocialMediaIcons">

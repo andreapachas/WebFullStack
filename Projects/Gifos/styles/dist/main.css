@@ -1,8 +1,42 @@
+.app.light {
+  --backgroundColor: #FFFFFF;
+  --borderColor: #572EE5;
+  --secondaryBackgroundColor: #572EE5;
+  --backgroundTrending: #F3F5F8;
+  --navDisplayColor: rgba(87, 46, 229, 0.9);
+  --primaryFontColor: #572EE5;
+  --paragraphFontColor: #000000;
+  --backgroundColor: #FFFFFF;
+  --borderColor: #572EE5;
+  --secondaryBackgroundColor: #572EE5;
+  --backgroundTrending: #F3F5F8;
+  --navDisplayColor: rgba(87, 46, 229, 0.9);
+  --primaryFontColor: #572EE5;
+  --paragraphFontColor: #000000;
+}
+
+.app.dark {
+  --backgroundColor: #37383C;
+  --borderColor: #000000;
+  --secondaryBackgroundColor: #FFFFFF;
+  --backgroundTrending: #222326;
+  --navDisplayColor: #000000;
+  --primaryFontColor: #FFFFFF;
+  --paragraphFontColor: #FFFFFF;
+  --backgroundColor: #37383C;
+  --borderColor: #000000;
+  --secondaryBackgroundColor: #FFFFFF;
+  --backgroundTrending: #222326;
+  --navDisplayColor: #000000;
+  --primaryFontColor: #FFFFFF;
+  --paragraphFontColor: #FFFFFF;
+}
+
 * {
   padding: 0px;
   margin: 0px;
   border: 0px;
-  color: #572EE5;
+  color: var(--primaryFontColor);
   font-family: "Montserrat", sans-serif;
 }
 
@@ -20,8 +54,9 @@ h1, h2, p {
 }
 
 header {
-  border-top: 5px solid #572EE5;
+  border-top: 5px solid var(--borderColor);
   padding: 0 5%;
+  background: var(--backgroundColor);
 }
 header nav {
   display: flex;
@@ -47,6 +82,35 @@ header nav .btn-nav .fa-times {
   font-size: 18px;
   display: none;
 }
+header .crearGifos {
+  display: block;
+  box-sizing: border-box;
+}
+header .crearGifos svg circle {
+  fill: var(--backgroundColor);
+  stroke: var(--secondaryBackgroundColor);
+}
+header .crearGifos svg path {
+  fill: var(--secondaryBackgroundColor);
+}
+header .crearGifos svg:hover circle {
+  fill: var(--secondaryBackgroundColor);
+  stroke: var(--secondaryBackgroundColor);
+}
+header .crearGifos svg:hover path {
+  fill: var(--backgroundColor);
+}
+header .crearGifos svg:active circle {
+  fill: #9CAFC3;
+  stroke: #9CAFC3;
+}
+header .crearGifos svg:active path {
+  fill: white;
+}
+header .nav-options .searchBar {
+  margin: 7px 132px -25px 90px;
+  display: none;
+}
 @media (max-width: 900px) {
   header .nav-options {
     display: none;
@@ -55,7 +119,7 @@ header nav .btn-nav .fa-times {
     height: 84%;
   }
   header .nav-options li {
-    height: 12%;
+    height: 8%;
     display: flex;
     justify-content: center;
   }
@@ -74,7 +138,10 @@ header nav .btn-nav .fa-times {
     display: block;
     width: 100%;
     height: 100%;
-    background-color: rgba(87, 46, 229, 0.9);
+    background-color: var(--navDisplayColor);
+  }
+  header .navbar:checked ~ .nav-options .searchBar {
+    display: none;
   }
   header .navbar:checked ~ .nav-options li {
     margin-bottom: 14px;
@@ -115,9 +182,13 @@ header nav .btn-nav .fa-times {
   outline: none;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  background: #FFFFFF;
-  border: 1px solid #572EE5;
-  color: #6B7989;
+  background: var(--backgroundColor);
+  border: 1px solid var(--secondaryBackgroundColor);
+  color: var(--paragraphFontColor);
+}
+.searchBar input::placeholder {
+  color: #9CAFC3;
+  opacity: 1;
 }
 .searchBar .iconSearch {
   position: absolute;
@@ -137,6 +208,7 @@ header nav .btn-nav .fa-times {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: var(--backgroundColor);
 }
 .searching-page h1 {
   font-size: 25px;
@@ -151,12 +223,12 @@ header nav .btn-nav .fa-times {
   color: #5ED7C6;
   text-decoration: none;
 }
-.searching-page figure {
+.searching-page .searchImage {
   width: 273px;
   height: 130px;
   margin: 0 13.6% -2px 13.6%;
 }
-.searching-page figure img {
+.searching-page .searchImage img {
   max-width: 100%;
 }
 .searching-page .trending {
@@ -184,7 +256,14 @@ header nav .btn-nav .fa-times {
   text-transform: uppercase;
 }
 
-.resulGifos::before {
+#titleCategorySearch {
+  line-height: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 38px;
+  display: none;
+}
+#titleCategorySearch::before {
   content: "";
   text-align: center;
   display: block;
@@ -195,15 +274,24 @@ header nav .btn-nav .fa-times {
 }
 
 .results {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+}
+.results img {
+  width: 156px;
+  height: 120px;
+  padding: 20px;
   text-align: center;
 }
-.results .contentResults {
-  flex: 1 1;
+
+.figure {
+  width: auto;
+  height: auto;
 }
-.results .contentResults img {
-  margin: 5.95% 2.5% 0px 2.5%;
+
+li {
+  list-style: none;
 }
 
 .btn {
@@ -216,9 +304,9 @@ header nav .btn-nav .fa-times {
   font-family: "Roboto", sans-serif;
   font-size: 13px;
   font-weight: bold;
-  background: #FFFFFF;
-  border: 1px solid #572EE5;
-  color: #572EE5;
+  background: var(--backgroundColor);
+  border: 1px solid var(--secondaryBackgroundColor);
+  color: var(--primaryFontColor);
   display: none;
 }
 
@@ -259,7 +347,7 @@ header nav .btn-nav .fa-times {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background: #F3F5F8;
+  background: var(--backgroundTrending);
 }
 .trendingGifos h2 {
   margin-top: 46px;
@@ -269,7 +357,7 @@ header nav .btn-nav .fa-times {
 .trendingGifos .subtitleTrending {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  color: #000000;
+  color: var(--paragraphFontColor);
   line-height: 23px;
   width: 185px;
   text-align: center;
@@ -278,16 +366,17 @@ header nav .btn-nav .fa-times {
 }
 
 .containerImgGifos {
-  background: #F3F5F8;
+  background: var(--backgroundTrending);
   display: none;
 }
 
 .containerFooter {
+  background: var(--backgroundColor);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border-bottom: 5px solid #572EE5;
+  border-bottom: 5px solid var(--borderColor);
 }
 
 .containerSocialMediaIcons {
@@ -296,7 +385,7 @@ header nav .btn-nav .fa-times {
 .containerSocialMediaIcons p {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
-  color: #000000;
+  color: var(--paragraphFontColor);
   margin-bottom: 24px;
 }
 .containerSocialMediaIcons img {
@@ -307,7 +396,7 @@ header nav .btn-nav .fa-times {
   font-size: 14px;
   letter-spacing: 0;
   line-height: 20px;
-  color: #000000;
+  color: var(--paragraphFontColor);
   font-family: "Roboto", sans-serif;
   margin-bottom: 23px;
 }
@@ -327,7 +416,7 @@ header nav .btn-nav .fa-times {
     top: 0;
     padding: 0;
     z-index: 3;
-    background-color: #FFFFFF;
+    background-color: var(--backgroundColor);
   }
   header nav {
     justify-content: space-between;
@@ -351,7 +440,7 @@ header nav .btn-nav .fa-times {
     margin-left: 48px;
   }
   header nav .nav-options li a {
-    color: #572EE5;
+    color: var(--primaryFontColor);
     letter-spacing: 0;
     line-height: 16px;
     font-weight: bold;
@@ -362,19 +451,13 @@ header nav .btn-nav .fa-times {
     border-bottom: 2px solid #5ED7C6;
   }
   header nav .nav-options li a:active {
-    color: #572EE5 56%;
+    color: var(--primaryFontColor) 56%;
   }
   header nav .nav-options li a:active {
     font-size: 14px;
     color: #9CAFC3;
     letter-spacing: 0;
     text-align: center;
-  }
-  header nav .nav-options li .crearGifos:hover {
-    fill: invert(18%) sepia(69%) saturate(7483%) hue-rotate(255deg) brightness(92%) contrast(95%);
-  }
-  header nav .nav-options li .crearGifos:active {
-    fill: invert(37%) sepia(63%) saturate(1879%) hue-rotate(321deg) brightness(90%) contrast(89%);
   }
 
   .searching-page h1 {
@@ -383,14 +466,13 @@ header nav .btn-nav .fa-times {
     font-size: 35px;
     line-height: 50px;
   }
-  .searching-page figure {
+  .searching-page .searchImage {
     width: 399px;
     height: 190px;
   }
   .searching-page input {
     margin-bottom: 73px;
     width: 551px;
-    color: #9CAFC3;
   }
   .searching-page .iconSearch {
     margin: 2.5% 0 0 -8.5%;
@@ -413,6 +495,14 @@ header nav .btn-nav .fa-times {
     margin: 74px auto;
   }
 
+  .results {
+    grid-template-columns: auto auto auto auto;
+  }
+  .results img {
+    width: 260px;
+    height: 200px;
+  }
+
   .trendingGifos h2 {
     font-size: 25px;
   }
@@ -433,13 +523,13 @@ header nav .btn-nav .fa-times {
     margin-left: 8.5%;
   }
   .containerImgGifos .buttonSliderLeft:hover {
-    background-image: url(../../images/button-slider-left-hover.svg);
+    background: var(--secondaryBackgroundColor);
   }
   .containerImgGifos .buttonSliderRight {
     margin-right: 8.5%;
   }
   .containerImgGifos .buttonSliderRight:hover {
-    background-image: url(../../images/button-slider-right-hover.svg);
+    background: var(--secondaryBackgroundColor);
   }
 
   .containerFooter {

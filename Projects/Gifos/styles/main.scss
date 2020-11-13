@@ -6,16 +6,10 @@ $fontSizeTrending: 18px;
 $fontSizeCategory: 16px;
 $fontSizeMedium: 15px;
 $fontSizeSmall: 14px;
-$backgroundColor: #FFFFFF;
-$secondaryBackgroundColor:#572EE5;
-$backgroundTrending: #F3F5F8;
-$navDisplayColor: rgba(87,46,229,0.90);
-$primaryFontColor: #572EE5;
 $secondaryFontColor: #5ED7C6;
-$paragraphFontColor:#000000;
-$searchFontColor:#6B7989;
-$searchFontColorLarge:#9CAFC3;
-$mediaFontColor:#CDD6E0;
+$searchFontColor: #6B7989;
+$searchFontColorLarge: #9CAFC3;
+$mediaFontColor: #CDD6E0;
 $primaryFontFamily: "Montserrat", sans-serif;
 $secondaryFontFamily: "Roboto", sans-serif;
 
@@ -26,11 +20,63 @@ $secondaryColorDarkMode: #000000;
 $backgroundTrendingDarkMode: #222326;
 $primaryFontColorDarkMode: #FFFFFF;
 
+$themes: (
+    "light": (
+        "colors": (
+            "backgroundColor": #FFFFFF,
+            "borderColor": #572EE5,
+            "secondaryBackgroundColor": #572EE5,
+            "backgroundTrending": #F3F5F8,
+            "navDisplayColor": rgba(87,46,229,0.90),
+            "primaryFontColor": #572EE5,
+            "paragraphFontColor": #000000
+        )
+    ),
+    "dark": (
+        "colors": (
+            "backgroundColor": #37383C,
+            "borderColor": #000000,
+            "secondaryBackgroundColor": #FFFFFF,
+            "backgroundTrending": #222326,
+            "navDisplayColor": #000000,
+            "primaryFontColor": #FFFFFF,
+            "paragraphFontColor": #FFFFFF
+        )
+    )
+);
+
+@each $theme-name, $theme-vars in $themes {
+    $colors: map-get($theme-vars, "colors");
+  
+    $theme: (
+      "backgroundColor": map-get($colors, "backgroundColor"),
+      "borderColor": map-get($colors, "borderColor"),
+      "secondaryBackgroundColor": map-get($colors, "secondaryBackgroundColor"),
+      "backgroundTrending": map-get($colors, "backgroundTrending"),
+      "navDisplayColor": map-get($colors, "navDisplayColor"),
+      "primaryFontColor": map-get($colors, "primaryFontColor"),
+      "paragraphFontColor": map-get($colors, "paragraphFontColor")
+    );
+  
+    .app.#{$theme-name} {  
+      // define a css variable for each color
+      @each $name, $color in $colors {
+        --#{$name}: #{$color};
+      }
+  
+      // define a css variable for each theme color
+      @each $name, $color in $theme {
+        --#{$name}: #{$color};
+      }
+    }
+  }
+  
+
 * {
     padding: 0px;
     margin: 0px;
     border: 0px;
-    color: $primaryFontColor;
+    color: var(--primaryFontColor);
     font-family: $primaryFontFamily;
 }
 
@@ -45,8 +91,9 @@ h1, h2, p {
     letter-spacing: 0;
 }
 header {
-    border-top: 5px solid $secondaryBackgroundColor;
+    border-top: 5px solid var(--borderColor);
     padding: 0 5%;
+    background: var(--backgroundColor);
     nav {
         display: flex;
         justify-content: space-between;
@@ -71,6 +118,41 @@ header {
             }
         }
     }
+    .crearGifos {
+        display: block;
+        box-sizing: border-box;
+        svg {
+            circle {
+                fill: var(--backgroundColor);
+                stroke: var(--secondaryBackgroundColor);
+            }
+            path {
+                fill: var(--secondaryBackgroundColor);
+            }
+            &:hover {
+                circle {
+                    fill: var(--secondaryBackgroundColor);
+                    stroke: var(--secondaryBackgroundColor);
+                }
+                path{
+                    fill: var(--backgroundColor);   
+                }
+            }
+            &:active {
+                circle {
+                    fill: $searchFontColorLarge;
+                    stroke: $searchFontColorLarge;
+                }
+                path {
+                    fill: white;
+                }
+            }
+        }
+    }
+    .nav-options .searchBar {
+        margin: 7px 132px -25px 90px;
+        display: none;
+    }
     @media (max-width: 900px) {
     .nav-options {
         display: none;
@@ -78,7 +160,7 @@ header {
         width: 100%;
         height: 84%;
         li {
-            height: 12%;
+            height: 8%;
             display: flex;
             justify-content: center;
             a {
@@ -98,12 +180,15 @@ header {
         display: block;
         width: 100%;
         height: 100%;
-        background-color:$navDisplayColor;
+        background-color:var(--navDisplayColor);
+        .searchBar{
+            display: none;
+        }
         li {
             margin-bottom: 14px;
             a {
                 font-size: $fontSizeMedium;
-                color: $backgroundColor;
+                color: $primaryFontColorDarkMode;
                 letter-spacing: 0;
                 line-height: 30px; 
             }
@@ -113,7 +198,7 @@ header {
                 margin: 0 auto;
                 width: 41px;
                 margin-top: 10.9px;
-                border-bottom: 0.1px solid $backgroundColor;
+                border-bottom: 0.1px solid $primaryFontColorDarkMode;
             }
         }
     }
@@ -140,9 +225,13 @@ header {
         outline: none;
         font-family: $secondaryFontFamily;
         font-size: $fontSizeCategory;
-        background: $backgroundColor;
-        border: 1px solid $secondaryBackgroundColor;
-        color: $searchFontColor;
+        background: var(--backgroundColor);
+        border: 1px solid var(--secondaryBackgroundColor);
+        color: var(--paragraphFontColor);
+        &::placeholder{
+            color: $searchFontColorLarge;
+            opacity: 1;
+        }
     }
     .iconSearch {
         position: absolute;
@@ -162,6 +251,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: var(--backgroundColor);
     h1 {
         font-size: $fontSizeLarge;
         line-height: 33px;
@@ -175,7 +265,7 @@ header {
             text-decoration: none;
         }
     }
-    figure {
+    .searchImage {
         width: 273px;
         height: 130px;
         margin: 0 13.6% -2px 13.6%;
@@ -209,26 +299,41 @@ header {
         }
     }
 }
-.resulGifos::before{
-    content: '';
+#titleCategorySearch{
+    line-height: 30px;
     text-align: center;
-    display: block;
-    margin: 35px auto;
-    width: 157px;
-    opacity: 0.5;
-    border-bottom: 1px solid $searchFontColorLarge;
-}
-.results{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    .contentResults{
-        flex: 1 1;
-        img {
-            margin: 5.95% 2.5% 0px 2.5%;
-        }
+    font-weight: bold;
+    margin-bottom: 38px;
+    display: none;
+    &::before{
+        content: '';
+        text-align: center;
+        display: block;
+        margin: 35px auto;
+        width: 157px;
+        opacity: 0.5;
+        border-bottom: 1px solid $searchFontColorLarge;
     }
 }
+.results{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    img {
+        width: 156px;
+        height: 120px;
+        padding: 20px;
+        text-align: center;
+    }
+}
+.figure{
+    width: auto;
+    height: auto;
+}
+li{
+    list-style: none;
+}
+
 .btn {
     width: 127px;
     height: 50px;
@@ -239,9 +344,9 @@ header {
     font-family: $secondaryFontFamily;
     font-size: 13px;
     font-weight: bold;
-    background: $backgroundColor;
-    border: 1px solid $secondaryBackgroundColor;
-    color: $primaryFontColor;
+    background: var(--backgroundColor);
+    border: 1px solid var(--secondaryBackgroundColor);
+    color: var(--primaryFontColor);
     display: none;
 }
 .title{
@@ -272,12 +377,12 @@ header {
         width: 287px;
     }
 }
-.trendingGifos{
+.trendingGifos {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background: #F3F5F8;
+    background: var(--backgroundTrending);
     h2{
         margin-top: 46px;
         font-size: 20px;
@@ -286,7 +391,7 @@ header {
     .subtitleTrending{
         font-family: $secondaryFontFamily;
         font-size: $fontSizeCategory;
-        color: $paragraphFontColor;
+        color: var(--paragraphFontColor);
         line-height: 23px;
         width: 185px;
         text-align: center;
@@ -295,22 +400,23 @@ header {
     }
 }
 .containerImgGifos{
-    background: #F3F5F8;
+    background: var(--backgroundTrending);
     display: none;
 }
 .containerFooter {
+    background: var(--backgroundColor);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border-bottom: 5px solid $secondaryBackgroundColor;
+    border-bottom: 5px solid var(--borderColor);
 }
 .containerSocialMediaIcons {
     margin:20px 0 47.8px 0;
     p{
         font-family: $secondaryFontFamily;
         font-size: $fontSizeSmall;
-        color: $paragraphFontColor;
+        color: var(--paragraphFontColor);
         margin-bottom: 24px;
     }
     img {
@@ -321,7 +427,7 @@ header {
     font-size: $fontSizeSmall;
     letter-spacing: 0;
     line-height: 20px;
-    color: $paragraphFontColor;
+    color: var(--paragraphFontColor);
     font-family: $secondaryFontFamily;
     margin-bottom: 23px;
 }
@@ -338,7 +444,7 @@ header {
         top: 0;
         padding: 0;
         z-index: 3;
-        background-color: $backgroundColor;
+        background-color: var(--backgroundColor);
         nav {
             .logo {
                 width: 68px;
@@ -358,7 +464,7 @@ header {
                     padding: 0;
                     margin-left: 48px;
                     a {
-                        color: $primaryFontColor;
+                        color: var(--primaryFontColor);
                         letter-spacing: 0;
                         line-height: 16px;
                         font-weight: bold;
@@ -369,19 +475,13 @@ header {
                         border-bottom: 2px solid $secondaryFontColor;
                     }
                     a:active {
-                        color: $primaryFontColor 56%;
+                        color: var(--primaryFontColor) 56%;
                     }
                     a:active {
                         font-size: $fontSizeSmall;
                         color: $searchFontColorLarge;
                         letter-spacing: 0;
                         text-align: center;
-                    }
-                    .crearGifos:hover{
-                        fill: invert(18%) sepia(69%) saturate(7483%) hue-rotate(255deg) brightness(92%) contrast(95%);
-                    }
-                    .crearGifos:active{
-                        fill: invert(37%) sepia(63%) saturate(1879%) hue-rotate(321deg) brightness(90%) contrast(89%);
                     }
                 }
             }
@@ -394,14 +494,13 @@ header {
             font-size: $fontSizeTitle;
             line-height: 50px;
         }
-        figure {
+        .searchImage {
             width: 399px;
             height: 190px;
         }
         input{
             margin-bottom: 73px;
             width: 551px;
-            color: $searchFontColorLarge;
         }
         .iconSearch{
             margin: 2.5% 0 0 -8.5%;
@@ -424,6 +523,13 @@ header {
             }
         }
     }
+    .results {
+        grid-template-columns: auto auto auto auto;
+        img {
+            width: 260px;
+            height: 200px;
+        }
+    }
     .trendingGifos{
         h2{
             font-size: $fontSizeLarge;
@@ -444,13 +550,13 @@ header {
             margin-left: 8.5%;
         }
         .buttonSliderLeft:hover{
-            background-image: url(../../images/button-slider-left-hover.svg);
+            background: var(--secondaryBackgroundColor);
         }
         .buttonSliderRight{
             margin-right: 8.5%;
         }
         .buttonSliderRight:hover{
-            background-image: url(../../images/button-slider-right-hover.svg);
+            background: var(--secondaryBackgroundColor);
         }
     }
     .containerFooter {
