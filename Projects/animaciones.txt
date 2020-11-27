@@ -1,0 +1,102 @@
+
+<section>
+  <div class="cinta1"></div>
+  <div class="cinta2"></div>
+  <div class="cinta3"></div>
+  <div class="pathed anchor"></div>
+</section>
+
+.cinta1 {
+  /* remove any of these individual animations to simplify the resulting animation */
+  animation:
+    rotate 4s infinite ease-in-out
+}
+.cinta1 {
+  offset-path: path('M0,0 C40,240 200,240 240,0');
+  position: absolute;
+}
+.cinta2 {
+  /* remove any of these individual animations to simplify the resulting animation */
+  animation:
+    antiClockwiseSpin 4s infinite ease-in-out
+}
+.cinta2 {
+  offset-path: path('M75,0 C40,240 200,240 240,0');
+  position: absolute;
+}
+.cinta3 {
+  /* remove any of these individual animations to simplify the resulting animation */
+  animation:
+    anchor 4s infinite
+}
+.cinta3 {
+  offset-path: path('M255,0 C80,240 200,240 240,0');
+  position: absolute;
+}
+
+body {
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 0;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+div {
+  width: 50px;
+  height: 50px;
+  border: 1px solid hsl(343,100%,58%,.3);
+  border-right: 5px solid hsl(343,100%,58%);
+  background: hsla(343,100%,58%,var(--opacity,.3));
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  font-family: monospace, sans-serif;
+}
+
+@keyframes rotate {
+  0% {
+    offset-rotate: auto 0deg;
+  }
+  100% {
+    offset-rotate: auto 360deg;
+  }
+}
+@keyframes antiClockwiseSpin {
+	0%  {
+    transform: rotate(360deg);
+  }
+	100% {
+    transform: rotate(0deg);
+  }	
+}
+
+@keyframes anchor {
+  0% {
+    offset-anchor: 50% 50%;
+  }
+  40% {
+    offset-anchor: -30% 80%;
+  }
+  100% {
+    offset-anchor: 90% -20%;
+  }
+}
+section {
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.anchor {
+  border-radius: 50%;
+  border: none;
+  width: 4px;
+  height: 4px;
+  --opacity: 1;
+}

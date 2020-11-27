@@ -6,6 +6,7 @@ $fontSizeTrending: 18px;
 $fontSizeCategory: 16px;
 $fontSizeMedium: 15px;
 $fontSizeSmall: 14px;
+$cardTrendingColor: #572EE5;
 $secondaryFontColor: #5ED7C6;
 $searchFontColor: #6B7989;
 $searchFontColorLarge: #9CAFC3;
@@ -134,7 +135,7 @@ header {
                     fill: var(--secondaryBackgroundColor);
                     stroke: var(--secondaryBackgroundColor);
                 }
-                path{
+                path {
                     fill: var(--backgroundColor);   
                 }
             }
@@ -228,7 +229,7 @@ header {
         background: var(--backgroundColor);
         border: 1px solid var(--secondaryBackgroundColor);
         color: var(--paragraphFontColor);
-        &::placeholder{
+        &::placeholder {
             color: $searchFontColorLarge;
             opacity: 1;
         }
@@ -260,7 +261,7 @@ header {
         text-align: center;
         font-weight: 800;
         width: 80%;
-        s{
+        s {
             color: $secondaryFontColor;
             text-decoration: none;
         }
@@ -299,13 +300,13 @@ header {
         }
     }
 }
-#titleCategorySearch{
+#titleCategorySearch {
     line-height: 30px;
     text-align: center;
     font-weight: bold;
     margin-bottom: 38px;
     display: none;
-    &::before{
+    &::before {
         content: '';
         text-align: center;
         display: block;
@@ -315,7 +316,7 @@ header {
         border-bottom: 1px solid $searchFontColorLarge;
     }
 }
-.results{
+.contentResults {
     display: grid;
     grid-template-columns: auto auto;
     padding: 10px;
@@ -326,14 +327,31 @@ header {
         text-align: center;
     }
 }
-.figure{
+.figure {
     width: auto;
     height: auto;
 }
-li{
+li {
     list-style: none;
 }
+.overlay {
+    margin-left: 57px;
+    margin-top: -174px;
+    position: absolute;
+    z-index: 99;
+    display: none;
+}
 
+.overlay.active {
+    display: block;
+}
+
+.overlay-icons {
+    padding: 0 1px;
+}
+.icon-undisplay {
+    display: none;
+}
 .btn {
     width: 127px;
     height: 50px;
@@ -348,33 +366,47 @@ li{
     border: 1px solid var(--secondaryBackgroundColor);
     color: var(--primaryFontColor);
     display: none;
+    &:hover {
+        background: var(--secondaryBackgroundColor);
+        border: 1px solid var(--backgroundColor);
+        color: var(--backgroundColor);
+    }
 }
-.title{
+.title {
     margin-top: 1.65%;
 }
-.favorites{
-    margin: 11px 0 16% 0;
+.favorites {
+    padding: 11px 0 16% 0;
+    background: var(--backgroundColor);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     display: none;
 }
-.myGifos{
-    margin: 11px 0 16% 0;
+.myGifos {
+    padding: 11px 0 10% 0;
+    background: var(--backgroundColor);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     display: none;
 }
-.notFound{
-    margin-top: 14%;
-    p{
-        margin-top: 4%;
+.icon {
+    width: 28px;
+    height: 21px;
+}
+.notFound {
+    margin-top: 7%;
+    p {
+        margin: 4% 15%;
         color: $secondaryFontColor;
         font-weight: bold;
         width: 287px;
+        text-align: center;
+        line-height: 33px;
+
     }
 }
 .trendingGifos {
@@ -383,12 +415,12 @@ li{
     align-items: center;
     text-align: center;
     background: var(--backgroundTrending);
-    h2{
+    h2 {
         margin-top: 46px;
         font-size: 20px;
         font-weight: bold;
     }
-    .subtitleTrending{
+    .subtitleTrending {
         font-family: $secondaryFontFamily;
         font-size: $fontSizeCategory;
         color: var(--paragraphFontColor);
@@ -399,7 +431,7 @@ li{
         margin-bottom: 32px;
     }
 }
-.containerImgGifos{
+.containerImgGifos {
     background: var(--backgroundTrending);
     display: none;
 }
@@ -413,7 +445,7 @@ li{
 }
 .containerSocialMediaIcons {
     margin:20px 0 47.8px 0;
-    p{
+    p {
         font-family: $secondaryFontFamily;
         font-size: $fontSizeSmall;
         color: var(--paragraphFontColor);
@@ -421,7 +453,7 @@ li{
     }
     img {
         margin: 0 19px;
-      }
+    }
 }
 .footerGifosAll {
     font-size: $fontSizeSmall;
@@ -523,41 +555,71 @@ li{
             }
         }
     }
-    .results {
+    .contentResults {
         grid-template-columns: auto auto auto auto;
         img {
             width: 260px;
             height: 200px;
         }
     }
-    .trendingGifos{
-        h2{
+    .notFound {
+        margin-top: 4%;
+        p {
+            margin: 4% 26%;    
+        }
+    }
+    .trendingGifos {
+        h2 {
             font-size: $fontSizeLarge;
         }
-        .subtitleTrending{
+        .subtitleTrending {
             font-size: $fontSizeTrending;
             line-height: 21px;
             width: 100%;
             margin-bottom: 53px;
         }
     }
-    .containerImgGifos{
-        display: flex;
+    .containerImgGifos {
+        display: inline-flex;
         justify-content: space-between;
         align-items: center;
         align-content: center;
-        .buttonSliderLeft{
-            margin-left: 8.5%;
+        flex-direction: row;
+        svg {
+            rect {
+                fill: var(--backgroundColor);
+                stroke: var(--secondaryBackgroundColor);
+            }
+            path {
+                fill: var(--secondaryBackgroundColor);
+                fill-rule: nonzero;
+                offset-path: path('M17,12');
+            }
+            &:hover {
+                rect {
+                    fill: var(--secondaryBackgroundColor);
+                    stroke: var(--secondaryBackgroundColor);
+                }
+                path{
+                    fill: var(--backgroundColor); 
+                }
+            }
         }
-        .buttonSliderLeft:hover{
-            background: var(--secondaryBackgroundColor);
-        }
-        .buttonSliderRight{
-            margin-right: 8.5%;
-        }
-        .buttonSliderRight:hover{
-            background: var(--secondaryBackgroundColor);
-        }
+    }
+    .overlay {
+        margin-left: 131px;
+        margin-top: -176px;
+        position: absolute;
+        z-index: 99;
+    }
+    .overlay:hover {
+        opacity: 1;
+        color: rebeccapurple;
+    }
+    .overlay-icons {
+        padding: 0 1px;
+        margin-top: -1%;
+        margin-left: 5px;
     }
     .containerFooter {
         display: flex;
@@ -565,11 +627,11 @@ li{
         align-items: center;
         align-content: center;
         flex-direction: row;
-        .containerSocialMediaIcons{
+        .containerSocialMediaIcons {
             display: flex;
             margin: 49.5px 0 37.5px 13.5%;
         }
-        .footerGifosAll{
+        .footerGifosAll {
             margin-right: 13.5%;
         }
     }
