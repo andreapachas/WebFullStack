@@ -89,3 +89,27 @@ En este bloque, aprenderás a capturar cada comportamiento que suceda en tu siti
 - JSON
 - CORS
 - Autenticación.
+
+## Bloque 3
+En este bloque, aprenderás a realizar aplicaciones que almacenen los datos de forma persistente mediante la administración de bases de datos. En otras palabras, en este Sprint trabajarás en el Back-End y la estructura de datos. (el mundo oculto uwu)
+### Servidores:
+- Lenguajes del lado del servidor
+- Estructura de paquetes HTTP
+- Request methods
+- Status codes
+- Base de datos relacionales
+- Base de datos no relacionales
+### Node.JS:
+- Express
+- Endpoint y metodos
+- Body Parsing
+- Procesamiento de archivos
+- Programación orientada a objetos
+- REST
+- Buenas prácticas
+### Bases de datos:
+- MySQL
+- Sintaxis SQL
+- Operaciones CRUD
+- Relacionales
+- NoSQL
